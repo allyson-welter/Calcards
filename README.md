@@ -1,6 +1,7 @@
 
 # Calcards
 <img width="180" height="53" alt="title1x" src="https://github.com/user-attachments/assets/2eb138e8-0b2e-469d-95c6-3ead19eaee27" />
+
 - Um jogo para dois jogadores onde vocês competem para obter a expressão matem que gera o maior resultado, com o apoio de números, operadores e truques!
 - Cada jogador recebe diferentes cartas que possibilitam a geração de expressões matemáticas a fim de gerar um número maior que seu oponente.
 - No início do jogo, são distribuídas 9 cartas, 6 números e 3 operações, para cada jogador. Ao fim da rodada, os jogadores recebem, cada um, 3 cartas extras: uma operação e dois números.
