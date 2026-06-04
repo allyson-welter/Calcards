@@ -1,13 +1,15 @@
 function choose_card(_card, _selectedCards, _deck){
 	_isFull = true;
 	_choosedCard = false;
-	_isAlreadySelected = array_get_index(_selectedCards, _card);
 	
 	for(i = 0; i < array_length(_selectedCards); i++){
 		if(_isFull && _selectedCards[i] == noone)
 			_isFull = false;
 	}
-	if(_isAlreadySelected >= 0){
+	
+	if(_card._selected){
+		_card._selected = false;
+		_isAlreadySelected = array_get_index(_selectedCards, _card);
 		_selectedCards[_isAlreadySelected] = noone;
 		if(_card._op)
 			ds_list_add(_deck, _card);
@@ -24,6 +26,7 @@ function choose_card(_card, _selectedCards, _deck){
 				_ind = ds_list_find_index(_deck, _card);
 				ds_list_delete(_deck, _ind);
 				_choosedCard = true;
+				_card._selected = true;
 			}
 		}
 		else{
@@ -32,12 +35,14 @@ function choose_card(_card, _selectedCards, _deck){
 				_ind = ds_list_find_index(_deck, _card);
 				ds_list_delete(_deck, _ind);
 				_choosedCard = true;
+				_card._selected = true;
 			}
 			else if(_selectedCards[2] == noone){
 				_selectedCards[2] = _card;
 				_ind = ds_list_find_index(_deck, _card);
 				ds_list_delete(_deck, _ind);
 				_choosedCard = true;
+				_card._selected = true;
 			}
 		}
 	}
@@ -57,4 +62,9 @@ function draw_selectedCards(_selectedCards){
 		_selectedCards[2].x = 220;
 		_selectedCards[2].y = 70;
 	}
+}
+
+function card_cant_be_selected(_card){
+	_card.image_alpha = 0;
+	_card.alarm[0] = 3;
 }

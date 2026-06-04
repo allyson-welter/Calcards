@@ -10,6 +10,7 @@
   },
   "defaultScriptType":1,
   "Folders":[
+    {"$GMFolder":"","%Name":"Sequences","folderPath":"folders/Sequences.yy","name":"Sequences","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Objects","folderPath":"folders/Objects.yy","name":"Objects","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Rooms","folderPath":"folders/Rooms.yy","name":"Rooms","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Scripts","folderPath":"folders/Scripts.yy","name":"Scripts","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -29,6 +30,7 @@
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"deck_functions","path":"scripts/deck_functions/deck_functions.yy",},},
     {"id":{"name":"game_functions","path":"scripts/game_functions/game_functions.yy",},},
+    {"id":{"name":"seq_card","path":"sequences/seq_card/seq_card.yy",},},
     {"id":{"name":"spr_cards","path":"sprites/spr_cards/spr_cards.yy",},},
   ],
   "resourceType":"GMProject",
