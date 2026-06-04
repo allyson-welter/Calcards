@@ -55,11 +55,11 @@ function draw_selectedCards(_selectedCards){
 		_selectedCards[0].y = 70;
 	}
 	if(_selectedCards[1] != noone){
-		_selectedCards[1].x = 190;
+		_selectedCards[1].x = 200;
 		_selectedCards[1].y = 70;
 	}
 	if(_selectedCards[2] != noone){
-		_selectedCards[2].x = 220;
+		_selectedCards[2].x = 240;
 		_selectedCards[2].y = 70;
 	}
 }
