@@ -17,6 +17,18 @@ function confirm_button(_cards){
 			_result = _cards[0] / _cards[2];
 			break;
 	}
-	_cards[3] = _result;
+	clear_selected(_cards);
+	_cards[0] = _result;
 	return true;
+}
+
+function refresh_confirm_button(_selectedCards){
+	if(is_all_selected(_selectedCards)){
+		obj_button.active = true;
+		obj_button.image_alpha = 1;
+	}
+	else{
+		obj_button.active = false;
+		obj_button.image_alpha = 0;
+	}
 }

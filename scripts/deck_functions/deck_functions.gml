@@ -32,7 +32,9 @@ function create_deck(deck){
 
 function draw_deck(deck){
 	for(i = 0; i < ds_list_size(deck); i++){
-		deck[| i].x = 50 + 50*i;
+		deck[| i].image_xscale = 0.35;
+		deck[| i].image_yscale = 0.35;
+		deck[| i].x = 63 + 32*i;
 		deck[| i].y = 150;
 		deck[| i]._selected = false;
 	}

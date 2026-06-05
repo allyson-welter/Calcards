@@ -44,17 +44,20 @@ function choose_card(_card, _selectedCards, _deck){
 }
 
 function draw_selectedCards(_selectedCards){
-	if(_selectedCards[0] != noone){
-		_selectedCards[0].x = 160;
-		_selectedCards[0].y = 70;
-	}
-	if(_selectedCards[1] != noone){
-		_selectedCards[1].x = 200;
-		_selectedCards[1].y = 70;
-	}
-	if(_selectedCards[2] != noone){
-		_selectedCards[2].x = 240;
-		_selectedCards[2].y = 70;
+	for(i = 0; i < 3; i++){
+		_card = _selectedCards[i];
+		if(_card != noone){
+			if(instance_exists(_card)){
+				_card.image_xscale = 0.3;
+				_card.image_yscale = 0.3;
+				_card.x = 70 + 30*i;
+				_card.y = 80;
+			}
+			else{
+				
+			}
+		}
+		
 	}
 }
 
@@ -70,4 +73,11 @@ function is_all_selected(_selectedCards){
 			_isAllSelected = false;
 	}
 	return _isAllSelected;
+}
+
+function clear_selected(_cards){
+	for(i = 0; i < 3; i++){
+		instance_destroy(_cards[i]);
+		_cards[i] = noone;
+	}
 }

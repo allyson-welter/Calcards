@@ -7,18 +7,27 @@ if(_inst){
 		_choosed = choose_card(_inst, _selectedCards, _deck);
 		
 		if(!_choosed){
-		card_cant_be_selected(_inst);
+			card_cant_be_selected(_inst);
 		}
 		else{
 			draw_selectedCards(_selectedCards);
 			draw_deck(_deck)
-			if(is_all_selected(_selectedCards)){
-				obj_button.active = true;
-				obj_button.image_alpha = 1;
-			}
+			refresh_confirm_button(_selectedCards);
 		}
 	}
 }
 else
 	draw_deck(_deck);
+	
+if(obj_button.active){
+	if(position_meeting(mouse_x, mouse_y, obj_button) && mouse_check_button_pressed(mb_left)){
+		_valid = confirm_button(_selectedCards);
+		if(_valid){
+			refresh_confirm_button(_selectedCards);
+		}
+		else{
+			
+		}
+	}
+}
 	
