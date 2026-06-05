@@ -12,9 +12,13 @@ if(_inst){
 		else{
 			draw_selectedCards(_selectedCards);
 			draw_deck(_deck)
+			if(is_all_selected(_selectedCards)){
+				obj_button.active = true;
+				obj_button.image_alpha = 1;
+			}
 		}
-			
 	}
 }
 else
 	draw_deck(_deck);
+	

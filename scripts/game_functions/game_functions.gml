@@ -1,11 +1,5 @@
 function choose_card(_card, _selectedCards, _deck){
-	_isFull = true;
 	_choosedCard = false;
-	
-	for(i = 0; i < array_length(_selectedCards); i++){
-		if(_isFull && _selectedCards[i] == noone)
-			_isFull = false;
-	}
 	
 	if(_card._selected){
 		_card._selected = false;
@@ -19,7 +13,7 @@ function choose_card(_card, _selectedCards, _deck){
 		return _choosedCard;
 	}
 	
-	if(!_isFull){
+	if(!is_all_selected(_selectedCards)){
 		if(_card._op){
 			if(_selectedCards[1] == noone){
 				_selectedCards[1] = _card;
@@ -67,4 +61,13 @@ function draw_selectedCards(_selectedCards){
 function card_cant_be_selected(_card){
 	_card.image_alpha = 0;
 	_card.alarm[0] = 3;
+}
+
+function is_all_selected(_selectedCards){
+	_isAllSelected = true;
+	for(i = 0; i < 3; i++){
+		if(_isAllSelected && _selectedCards[i] == noone)
+			_isAllSelected = false;
+	}
+	return _isAllSelected;
 }
