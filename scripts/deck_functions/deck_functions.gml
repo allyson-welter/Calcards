@@ -1,6 +1,7 @@
 function create_deck(deck){
 	deckN = ds_list_create();
 	deckO = ds_list_create();
+	randomise();
 
 	for(var i = 0; i < 10; i++)
 	{
