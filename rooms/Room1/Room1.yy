@@ -1,23 +1,14 @@
 {
   "$GMRoom":"v1",
-<<<<<<< Updated upstream:rooms/Room1/Room1.yy
   "%Name":"Room1",
   "creationCodeFile":"rooms/Room1/RoomCreationCode.gml",
-=======
-  "%Name":"jogo",
-  "creationCodeFile":"",
->>>>>>> Stashed changes:rooms/jogo/jogo.yy
   "inheritCode":false,
   "inheritCreationOrder":false,
   "inheritLayers":false,
   "instanceCreationOrder":[
-<<<<<<< Updated upstream:rooms/Room1/Room1.yy
     {"name":"inst_56479231","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_2CA492B","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_56EC0D36","path":"rooms/Room1/Room1.yy",},
-=======
-    {"name":"inst_56479231","path":"rooms/jogo/jogo.yy",},
->>>>>>> Stashed changes:rooms/jogo/jogo.yy
   ],
   "isDnd":false,
   "layers":[
@@ -26,7 +17,6 @@
         {"$GMRInstance":"v4","%Name":"inst_2CA492B","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2CA492B","objectId":{"name":"obj_button","path":"objects/obj_button/obj_button.yy",},"previewSprite":{"name":"spr_buttonConfirm","path":"sprites/spr_buttonConfirm/spr_buttonConfirm.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":0.4,"scaleY":0.33333334,"x":199.0,"y":79.0,},
         {"$GMRInstance":"v4","%Name":"inst_56EC0D36","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_56EC0D36","objectId":{"name":"obj_event","path":"objects/obj_event/obj_event.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":384.0,"y":128.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
-<<<<<<< Updated upstream:rooms/Room1/Room1.yy
     {"$GMRAssetLayer":"","%Name":"Assets","assets":[
         {"$GMRSpriteGraphic":"v1","%Name":"graphic_1C8DB8F1","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_1C8DB8F1","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":0.4688797,"scaleY":1.0,"spriteId":{"name":"spr_centerBackground","path":"sprites/spr_centerBackground/spr_centerBackground.yy",},"x":99.06639,"y":79.0,},
         {"$GMRSpriteGraphic":"v1","%Name":"graphic_6A7F1989","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_6A7F1989","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_handBackground","path":"sprites/spr_handBackground/spr_handBackground.yy",},"x":160.0,"y":146.0,},
@@ -34,11 +24,8 @@
       ],"depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Assets","properties":[],"resourceType":"GMRAssetLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRBackgroundLayer":"","%Name":"BackgroundStars","animationFPS":0.0,"animationSpeedType":0,"colour":4294967295,"depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"BackgroundStars","properties":[],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":{"name":"spr_gameBackgroundStars","path":"sprites/spr_gameBackgroundStars/spr_gameBackgroundStars.yy",},"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
     {"$GMRBackgroundLayer":"","%Name":"BackgroundCloud","animationFPS":0.0,"animationSpeedType":0,"colour":4294967295,"depth":300,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"BackgroundCloud","properties":[],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":{"name":"spr_gameBackgroundClouds","path":"sprites/spr_gameBackgroundClouds/spr_gameBackgroundClouds.yy",},"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
-=======
-    {"$GMRBackgroundLayer":"","%Name":"Background","animationFPS":30.0,"animationSpeedType":0,"colour":4294967295,"depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Background","properties":[],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":null,"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
->>>>>>> Stashed changes:rooms/jogo/jogo.yy
   ],
-  "name":"jogo",
+  "name":"Room1",
   "parent":{
     "name":"Rooms",
     "path":"folders/Rooms.yy",

@@ -29,12 +29,8 @@ function confirm_button(_cards, has_result){
 }
 
 function refresh_confirm_button(_selectedCards){
-	if(is_all_selected(_selectedCards)){
-		obj_button.active = true;
-		obj_button.image_alpha = 1;
-	}
-	else{
-		obj_button.active = false;
-		obj_button.image_alpha = 0;
-	}
+	if(is_all_selected(_selectedCards))
+		instance_activate_object(obj_button);
+	else
+		instance_deactivate_object(obj_button);
 }
