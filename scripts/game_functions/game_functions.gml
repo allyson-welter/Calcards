@@ -73,7 +73,11 @@ function clear_selected(_cards, has_result){
 	else
 		i = 0;
 	for(; i < 3; i++){
-		instance_destroy(_cards[i]);
+		if(_cards[i].is_op)
+			ds_list_add(global.deckOperations, _cards[i]);
+		else
+			ds_list_add(global.deckNumbers, _cards[i]);
+		instance_deactivate_object(_cards[i]);
 		_cards[i] = noone;
 	}
 }
