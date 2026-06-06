@@ -2,19 +2,13 @@ function choose_card(_card, _selectedCards, _deck){
 	_choosedCard = false;
 	
 	if(_card._selected){
-		_card._selected = false;
-		_isAlreadySelected = array_get_index(_selectedCards, _card);
-		_selectedCards[_isAlreadySelected] = noone;
-		if(_card._op)
-			ds_list_add(_deck, _card);
-		else
-			ds_list_insert(_deck, 0, _card);
+		return_to_deck(_card, _selectedCards, _deck);
 		_choosedCard = true;
 		return _choosedCard;
 	}
 	
 	if(!is_all_selected(_selectedCards)){
-		if(_card._op){
+		if(_card.is_op){
 			if(_selectedCards[1] == noone){
 				_selectedCards[1] = _card;
 				_ind = ds_list_find_index(_deck, _card);
@@ -43,21 +37,19 @@ function choose_card(_card, _selectedCards, _deck){
 	return _choosedCard;
 }
 
-function draw_selectedCards(_selectedCards){
-	for(i = 0; i < 3; i++){
+function draw_selectedCards(_selectedCards, has_result){
+	if(has_result)
+		i = 1;
+	else
+		i = 0;
+	for(; i < 3; i++){
 		_card = _selectedCards[i];
 		if(_card != noone){
-			if(instance_exists(_card)){
 				_card.image_xscale = 0.3;
 				_card.image_yscale = 0.3;
 				_card.x = 70 + 30*i;
 				_card.y = 80;
-			}
-			else{
-				
-			}
 		}
-		
 	}
 }
 
@@ -75,9 +67,23 @@ function is_all_selected(_selectedCards){
 	return _isAllSelected;
 }
 
-function clear_selected(_cards){
-	for(i = 0; i < 3; i++){
+function clear_selected(_cards, has_result){
+	if(has_result)
+		i = 1;
+	else
+		i = 0;
+	for(; i < 3; i++){
 		instance_destroy(_cards[i]);
 		_cards[i] = noone;
 	}
+}
+
+function return_to_deck(_card, _selectedCards, _deck){
+	_card._selected = false;
+	_index = array_get_index(_selectedCards, _card);
+	_selectedCards[_index] = noone;
+	if(_card.is_op)
+		ds_list_add(_deck, _card);
+	else
+		ds_list_insert(_deck, 0, _card);
 }

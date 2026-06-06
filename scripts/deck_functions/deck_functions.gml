@@ -1,7 +1,6 @@
 function create_deck(deck){
 	deckN = ds_list_create();
 	deckO = ds_list_create();
-	randomise();
 
 	for(var i = 0; i < 10; i++)
 	{
@@ -42,8 +41,8 @@ function draw_deck(deck){
 
 function is_operation(_card){
 	if(_card.image_index < 10){
-		_card._op = false;
+		_card.is_op = false;
 	}
 	else
-		_card._op = true;
+		_card.is_op = true;
 }

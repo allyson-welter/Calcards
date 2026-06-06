@@ -29,6 +29,7 @@
   "name":"Calcards",
   "resources":[
     {"id":{"name":"fnt_number","path":"fonts/fnt_number/fnt_number.yy",},},
+    {"id":{"name":"fnt_result","path":"fonts/fnt_result/fnt_result.yy",},},
     {"id":{"name":"obj_button","path":"objects/obj_button/obj_button.yy",},},
     {"id":{"name":"obj_card","path":"objects/obj_card/obj_card.yy",},},
     {"id":{"name":"obj_event","path":"objects/obj_event/obj_event.yy",},},
