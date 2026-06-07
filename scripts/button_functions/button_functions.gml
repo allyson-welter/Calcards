@@ -4,9 +4,19 @@ function menu_buttons(_button){
 			room_goto(rm_tutorial);
 			break;
 		case "level1":
-		case "level2":
-		case "level3":
 			room_goto(rm_game);
+			break;
+		case "level2":
+			if(global.level > 1)
+				room_goto(rm_game);
+			else
+				shine_button(_button);
+			break;
+		case "level3":
+			if(global.level > 2)
+				room_goto(rm_game);
+			else
+				shine_button(_button);
 			break;
 	}
 }

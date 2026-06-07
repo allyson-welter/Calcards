@@ -11,21 +11,31 @@ if(_inst){
 			draw_selectedCards(_selectedCards, _round);
 			draw_deck(_deck)
 			refresh_confirm_button(_selectedCards);
+			show_debug_message(random_get_seed());
+			show_debug_message(_inst.image_index);
 		}
 	}
 }
 
+_btn = instance_position(mouse_x, mouse_y, obj_button);
 	
-if(instance_exists(obj_button)){
-	if(position_meeting(mouse_x, mouse_y, obj_button) && mouse_check_button_pressed(mb_left)){
-		_valid = confirm_button(_selectedCards, _round);
-		if(_valid){
-			refresh_confirm_button(_selectedCards);
-			_round++;
-			new_round(_deck, _round);
+if(_btn){
+	if(mouse_check_button_pressed(mb_left)){
+		if(_btn.button_type == "confirm"){ // botao de confirmar as cartas selecionadas
+			_valid = confirm_button(_selectedCards, _round);
+			if(_valid){
+				refresh_confirm_button(_selectedCards);
+				_round++;
+				stars = get_stars(number, _selectedCards[0]);
+				new_round(_deck, _round, number, _selectedCards[0]);
+			}
+			else{
+				shine_button(obj_button);
+			}
 		}
-		else{
-			shine_button(obj_button);
+		else{ // botao que aparece ao final do jogo (continuar)
+			global.level++;
+			room_goto(rm_menu);
 		}
 	}
 }

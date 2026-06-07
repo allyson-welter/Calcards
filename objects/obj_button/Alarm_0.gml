@@ -1,2 +1,2 @@
-image_alpha = 1;
+image_alpha = normal_alpha;
 image_blend = c_white;

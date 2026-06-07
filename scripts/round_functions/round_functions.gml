@@ -10,7 +10,7 @@ function event_functions(){
 		return texto_final;
 }
 
-function new_round(deck, _round){
+function new_round(deck, _round, number, _result){
 	switch(_round){
 		case 2:
 		give_player_cards(deck, 0, 1);
@@ -23,7 +23,37 @@ function new_round(deck, _round){
 		shine_card(deck[| 0]);
 			break;
 		case 4:
-		
+		end_game(deck, number, _result);
 			break;
 	}
+}
+
+function clear_lists(deck){
+	ds_list_destroy(global.deckNumbers);
+	ds_list_destroy(global.deckOperations);
+	instance_destroy(obj_card);
+	ds_list_destroy(deck);
+
+}
+
+function end_game(deck, number, _result){
+	clear_lists(deck);
+	_btn = instance_create_layer(160, 150, "Instances", obj_button);
+	_btn.image_yscale = 0.3;
+	_btn.image_xscale = 0.3;
+	_btn.button_type = "continue";
+	_btn.sprite_index = spr_buttonContinuar;
+}
+
+function get_stars(number, _result){
+	_diff = abs(number - _result);
+	if(_diff > 10) // 0 estrelas
+		_stars = 0;
+	else if(_diff > 5) // 1 estrela
+		_stars = 1;
+	else if(_diff > 0) // 2 estrelas
+		_stars = 2;
+	else // 3 estrelas (_diff = 0)
+		_stars = 3;
+	return _stars;
 }

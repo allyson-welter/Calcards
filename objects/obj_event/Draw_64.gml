@@ -1,4 +1,4 @@
-if (controle) {
+if (controle && obj_game._round < 3) {
     var _cx = display_get_gui_width() / 2;
     var _cy = display_get_gui_height() / 2;
     

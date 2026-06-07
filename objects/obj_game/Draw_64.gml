@@ -9,3 +9,6 @@ if(_round > 1){
 	draw_set_colour(c_red);
 	draw_text_transformed(310, 260, _selectedCards[0], 7, 7, 0);
 }
+
+if(_round > 3)
+	draw_sprite(spr_starsTab, stars, 680, 350);

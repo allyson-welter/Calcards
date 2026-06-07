@@ -15,7 +15,7 @@ function draw_selectedCards(_selectedCards, _round){
 		i = 0;
 	for(; i < 3; i++){
 		_card = _selectedCards[i];
-		if(_card != noone){
+		if(_card != undefined){
 				_card.image_xscale = 0.3;
 				_card.image_yscale = 0.3;
 				_card.x = 70 + 30*i;

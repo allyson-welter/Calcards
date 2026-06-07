@@ -9,7 +9,7 @@ function choose_card(_card, _selectedCards, _deck){
 	
 	if(!is_all_selected(_selectedCards)){
 		if(_card.is_op){
-			if(_selectedCards[1] == noone){
+			if(is_undefined(_selectedCards[1])){
 				_selectedCards[1] = _card;
 				_ind = ds_list_find_index(_deck, _card);
 				ds_list_delete(_deck, _ind);
@@ -18,14 +18,14 @@ function choose_card(_card, _selectedCards, _deck){
 			}
 		}
 		else{
-			if(_selectedCards[0] == noone){
+			if(is_undefined(_selectedCards[0])){
 				_selectedCards[0] = _card;
 				_ind = ds_list_find_index(_deck, _card);
 				ds_list_delete(_deck, _ind);
 				_choosedCard = true;
 				_card._selected = true;
 			}
-			else if(_selectedCards[2] == noone){
+			else if(is_undefined(_selectedCards[2])){
 				_selectedCards[2] = _card;
 				_ind = ds_list_find_index(_deck, _card);
 				ds_list_delete(_deck, _ind);
@@ -45,7 +45,7 @@ function card_cant_be_selected(_card){
 function is_all_selected(_selectedCards){
 	_isAllSelected = true;
 	for(i = 0; i < 3; i++){
-		if(_isAllSelected && _selectedCards[i] == noone)
+		if(_isAllSelected && is_undefined(_selectedCards[i]))
 			_isAllSelected = false;
 	}
 	return _isAllSelected;
@@ -63,14 +63,14 @@ function clear_selected(_cards, _round){
 			ds_list_add(global.deckNumbers, _cards[i]);
 		_cards[i]._selected = false;
 		instance_deactivate_object(_cards[i]);
-		_cards[i] = noone;
+		_cards[i] = undefined;
 	}
 }
 
 function return_to_deck(_card, _selectedCards, _deck){
 	_card._selected = false;
 	_index = array_get_index(_selectedCards, _card);
-	_selectedCards[_index] = noone;
+	_selectedCards[_index] = undefined;
 	if(_card.is_op)
 		ds_list_add(_deck, _card);
 	else

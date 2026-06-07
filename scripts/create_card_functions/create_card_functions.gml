@@ -1,5 +1,4 @@
 function give_player_cards(deck, _num, _op){ // _num é a quantidade de cartas de numeros a serem dadas e _op a de operacoes a serem dadas
-	randomise();
 	ds_list_shuffle(global.deckOperations);
 	ds_list_shuffle(global.deckNumbers);
 

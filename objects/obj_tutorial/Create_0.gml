@@ -1,7 +1,7 @@
 textNum = 0;
 text = "";
 title = "";
-obj_button.button_type = "confirm";
+obj_button.button_type = "continue";
 obj_button.sprite_index = spr_buttonContinuar;
 define_text_display();
 
