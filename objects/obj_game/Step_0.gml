@@ -25,7 +25,7 @@ if(instance_exists(obj_button)){
 			new_round(_deck, _round);
 		}
 		else{
-			
+			shine_button(obj_button);
 		}
 	}
 }

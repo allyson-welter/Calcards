@@ -47,3 +47,9 @@ function refresh_confirm_button(_selectedCards){
 	else
 		instance_deactivate_object(obj_button);
 }
+
+function shine_button(btn){
+	btn.image_alpha = 0.5;
+	btn.image_blend = c_red;
+	btn.alarm[0] = 10;
+}

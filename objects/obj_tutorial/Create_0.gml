@@ -2,14 +2,14 @@ textNum = 0;
 text = "";
 title = "";
 obj_button.button_type = "confirm";
-obj_button.sprite_index = spr_buttonConfirm;
+obj_button.sprite_index = spr_buttonContinuar;
 define_text_display();
 
 function define_text_display(){
 	switch(textNum){
 		case 0:
 			title = "TUTORIAL";
-			text = "Bem-vindo ao Calcards. Neste tutorial, voce aprendera o necessario para entender o jogo e joga-lo da maneira correta.\n\nQuando quiser ir para a proxima pagina do tutorial, clique em confirmar.";
+			text = "Bem-vindo ao Calcards. Neste tutorial, voce aprendera o necessario para entender o jogo e joga-lo da maneira correta.\n\nQuando quiser ir para a proxima pagina do tutorial, clique em continuar.";
 			break;
 		case 1:
 			title = "REGRAS DO JOGO";

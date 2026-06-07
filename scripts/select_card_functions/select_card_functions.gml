@@ -61,6 +61,7 @@ function clear_selected(_cards, _round){
 			ds_list_add(global.deckOperations, _cards[i]);
 		else
 			ds_list_add(global.deckNumbers, _cards[i]);
+		_cards[i]._selected = false;
 		instance_deactivate_object(_cards[i]);
 		_cards[i] = noone;
 	}

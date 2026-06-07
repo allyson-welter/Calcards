@@ -13,8 +13,17 @@ function event_functions(){
 function new_round(deck, _round){
 	switch(_round){
 		case 2:
+		give_player_cards(deck, 0, 1);
+		draw_deck(deck);
+		shine_card(deck[| ds_list_size(deck) - 1]);
 			break;
 		case 3:
+		give_player_cards(deck, 1, 0);
+		draw_deck(deck);
+		shine_card(deck[| 0]);
+			break;
+		case 4:
+		
 			break;
 	}
 }

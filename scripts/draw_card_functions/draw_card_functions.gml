@@ -23,3 +23,10 @@ function draw_selectedCards(_selectedCards, _round){
 		}
 	}
 }
+
+function shine_card(_card){
+	_card.image_blend = c_yellow;
+	_card.image_alpha = 0.5;
+	_card.alarm[0] = 30;
+	
+}

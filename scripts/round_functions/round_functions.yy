@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"event_functions",
+  "%Name":"round_functions",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"event_functions",
+  "name":"round_functions",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",
