@@ -1,6 +1,19 @@
-function confirm_button(_cards, has_result){
+function menu_buttons(_button){
+	switch(_button.button_type){
+		case "tutorial":
+			room_goto(rm_tutorial);
+			break;
+		case "level1":
+		case "level2":
+		case "level3":
+			room_goto(rm_game);
+			break;
+	}
+}
+
+function confirm_button(_cards, _round){
 	_op = _cards[1].image_index;
-	if(has_result)
+	if(_round > 1)
 		_num1 = _cards[0];
 	else
 		_num1 = _cards[0].image_index;
@@ -23,7 +36,7 @@ function confirm_button(_cards, has_result){
 			break;
 	}
 	_result = int64(_result);
-	clear_selected(_cards, has_result);
+	clear_selected(_cards, _round);
 	_cards[0] = _result;
 	return true;
 }

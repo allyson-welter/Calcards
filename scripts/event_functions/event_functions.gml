@@ -9,3 +9,12 @@ function event_functions(){
 		var texto_final = arsenal_eventos[indice_sorteado];
 		return texto_final;
 }
+
+function new_round(deck, _round){
+	switch(_round){
+		case 2:
+			break;
+		case 3:
+			break;
+	}
+}

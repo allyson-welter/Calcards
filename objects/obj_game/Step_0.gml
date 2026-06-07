@@ -8,7 +8,7 @@ if(_inst){
 			card_cant_be_selected(_inst);
 		}
 		else{
-			draw_selectedCards(_selectedCards, has_result);
+			draw_selectedCards(_selectedCards, _round);
 			draw_deck(_deck)
 			refresh_confirm_button(_selectedCards);
 		}
@@ -18,10 +18,11 @@ if(_inst){
 	
 if(instance_exists(obj_button)){
 	if(position_meeting(mouse_x, mouse_y, obj_button) && mouse_check_button_pressed(mb_left)){
-		_valid = confirm_button(_selectedCards, has_result);
+		_valid = confirm_button(_selectedCards, _round);
 		if(_valid){
 			refresh_confirm_button(_selectedCards);
-			has_result = true;
+			_round++;
+			new_round(_deck, _round);
 		}
 		else{
 			
