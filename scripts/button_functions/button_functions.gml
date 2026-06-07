@@ -5,16 +5,21 @@ function menu_buttons(_button){
 			break;
 		case "level1":
 			room_goto(rm_game);
+			global.choosedLevel = 1;
 			break;
 		case "level2":
-			if(global.level > 1)
+			if(global.levelsUnlocked > 1){
+				global.choosedLevel = 2;
 				room_goto(rm_game);
+			}
 			else
 				shine_button(_button);
 			break;
 		case "level3":
-			if(global.level > 2)
+			if(global.levelsUnlocked > 2){
+				global.choosedLevel = 3;
 				room_goto(rm_game);
+			}
 			else
 				shine_button(_button);
 			break;
@@ -62,4 +67,10 @@ function shine_button(btn){
 	btn.image_alpha = 0.5;
 	btn.image_blend = c_red;
 	btn.alarm[0] = 10;
+}
+
+function update_level(){
+	if(global.choosedLevel == global.levelsUnlocked)
+		global.levelsUnlocked++;
+	room_goto(rm_menu);
 }

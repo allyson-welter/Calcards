@@ -34,8 +34,7 @@ if(_btn){
 			}
 		}
 		else{ // botao que aparece ao final do jogo (continuar)
-			global.level++;
-			room_goto(rm_menu);
+			update_level();
 		}
 	}
 }
