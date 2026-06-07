@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"deck_functions",
+  "%Name":"select_card_functions",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"deck_functions",
+  "name":"select_card_functions",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

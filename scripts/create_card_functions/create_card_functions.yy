@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"game_functions",
+  "%Name":"create_card_functions",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"game_functions",
+  "name":"create_card_functions",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

@@ -37,22 +37,6 @@ function choose_card(_card, _selectedCards, _deck){
 	return _choosedCard;
 }
 
-function draw_selectedCards(_selectedCards, has_result){
-	if(has_result)
-		i = 1;
-	else
-		i = 0;
-	for(; i < 3; i++){
-		_card = _selectedCards[i];
-		if(_card != noone){
-				_card.image_xscale = 0.3;
-				_card.image_yscale = 0.3;
-				_card.x = 70 + 30*i;
-				_card.y = 80;
-		}
-	}
-}
-
 function card_cant_be_selected(_card){
 	_card.image_alpha = 0;
 	_card.alarm[0] = 3;
@@ -67,8 +51,8 @@ function is_all_selected(_selectedCards){
 	return _isAllSelected;
 }
 
-function clear_selected(_cards, has_result){
-	if(has_result)
+function clear_selected(_cards, _round){
+	if(_round > 1)
 		i = 1;
 	else
 		i = 0;
