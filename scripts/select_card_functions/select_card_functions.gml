@@ -121,6 +121,9 @@ function get_result(_num1, _num2, _op){
 				case 4:
 					_result = power((_num1), (_num2))
 					break;
+				case 5:
+					_result = (_num1)*sqrt(_num2);
+					break;
 			}
 		break;
 	}
