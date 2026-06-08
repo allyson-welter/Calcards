@@ -3,7 +3,7 @@ _insta = instance_position(mouse_x, mouse_y, obj_button);
 if(_insta){
 
 	if(mouse_check_button_pressed(mb_left)){
-		text_evento = event_functions();
+		text_evento = event_functions(); // essa funcao ta dentro do round_functions
 		controle = true;
 	}
 }

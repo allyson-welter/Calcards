@@ -35,7 +35,7 @@ function confirm_button(_cards, _round){
 		_num1 = get_card_number_or_operation(_cards[0]);
 	_num2 = get_card_number_or_operation(_cards[2]);
 	
-	if(_op == 13 && _num2 == 0) // verifica se tem divisao por 0
+	if(_op == 3 && _num2 == 0) // verifica se tem divisao por 0
 		return false;
 		
 	_result = get_result(_num1, _num2, _op);

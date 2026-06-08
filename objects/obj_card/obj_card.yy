@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_cards",
-    "path":"sprites/spr_cards/spr_cards.yy",
+    "name":"spr_cardsOperations",
+    "path":"sprites/spr_cardsOperations/spr_cardsOperations.yy",
   },
   "spriteMaskId":null,
   "visible":true,

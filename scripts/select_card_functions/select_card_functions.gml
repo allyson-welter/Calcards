@@ -88,16 +88,16 @@ function get_card_number_or_operation(_card){
 function get_result(_num1, _num2, _op){
 	_result = 0;
 	switch(_op){
-		case 10: // sprite da soma
+		case 0: // sprite da soma
 			_result = _num1 + _num2;
 			break;
-		case 11: // sprite da subtracao
+		case 1: // sprite da subtracao
 			_result = _num1 - _num2;
 			break;
-		case 12: // sprite da multiplicacao
+		case 2: // sprite da multiplicacao
 			_result = _num1*_num2;
 			break;
-		case 13: // sprite da divisao
+		case 3: // sprite da divisao
 			_result = (_num1)/(_num2);
 			break;
 	}

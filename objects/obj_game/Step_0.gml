@@ -23,14 +23,14 @@ if(_btn){
 	if(mouse_check_button_pressed(mb_left)){
 		if(_btn.button_type == "confirm"){ // botao de confirmar as cartas selecionadas
 			_valid = confirm_button(_selectedCards, _round);
-			if(_valid){
+			if(_valid){ // esse valid é se a operacao foi valida (ex: se tem divisão por 0, valid da false)
 				refresh_confirm_button(_selectedCards);
 				_round++;
 				stars = get_stars(number, _selectedCards[0]);
 				new_round(_deck, _round, number, _selectedCards[0]);
 			}
 			else{
-				shine_button(obj_button);
+				shine_button(obj_button); // funcao pra piscar o botao em vermelho
 			}
 		}
 		else{ // botao que aparece ao final do jogo (continuar)
