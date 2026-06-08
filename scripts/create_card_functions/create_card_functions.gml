@@ -23,7 +23,10 @@ function create_main_deck(){ // essa funcao cria o baralho principal (as cartas 
 		_card.normal_index = _card.image_index;
 		instance_deactivate_object(_card);
 		global.deckNumbers[| i] = _card; // cria as instancias do deck de numeros
-		if(i < 4) // cria as instancias do deck de operacoes
+		
+		switch(global.choosedLevel){
+			case 1:
+			if(i < 4) // cria as instancias do deck de operacoes
 		{
 			_card = instance_create_layer(0, 0, "Instances", obj_card);
 			_card.sprite_index = spr_cardsOperations;
@@ -32,6 +35,21 @@ function create_main_deck(){ // essa funcao cria o baralho principal (as cartas 
 			_card.is_op = true;
 			instance_deactivate_object(_card);
 			global.deckOperations[| i] = _card;
+		}
+			break;
+		
+			case 2:
+				if(i < 6) // cria as instancias do deck de operacoes
+				{
+					_card = instance_create_layer(0, 0, "Instances", obj_card);
+					_card.sprite_index = spr_cardsOperations;
+					_card.image_index = 2*i;
+					_card.normal_index = _card.image_index;
+					_card.is_op = true;
+					instance_deactivate_object(_card);
+					global.deckOperations[| i] = _card;
+				}
+			break;
 		}
 	}
 }

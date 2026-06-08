@@ -87,19 +87,43 @@ function get_card_number_or_operation(_card){
 
 function get_result(_num1, _num2, _op){
 	_result = 0;
-	switch(_op){
-		case 0: // sprite da soma
-			_result = _num1 + _num2;
-			break;
-		case 1: // sprite da subtracao
-			_result = _num1 - _num2;
-			break;
-		case 2: // sprite da multiplicacao
-			_result = _num1*_num2;
-			break;
-		case 3: // sprite da divisao
-			_result = (_num1)/(_num2);
-			break;
+	switch(global.choosedLevel){
+		case 1:
+			switch(_op){
+			case 0: // sprite da soma
+				_result = _num1 + _num2;
+				break;
+			case 1: // sprite da subtracao
+				_result = _num1 - _num2;
+				break;
+			case 2: // sprite da multiplicacao
+				_result = _num1*_num2;
+				break;
+			case 3: // sprite da divisao
+				_result = (_num1)/(_num2);
+				break;
+			}
+		break;
+		case 2:
+			switch(_op){
+				case 0: // sprite da soma
+					_result = _num1 + _num2;
+					break;
+				case 1: // sprite da subtracao
+					_result = _num1 - _num2;
+					break;
+				case 2: // sprite da multiplicacao
+					_result = _num1*_num2;
+					break;
+				case 3: // sprite da divisao
+					_result = (_num1)/(_num2);
+					break;
+				case 4:
+					_result = power((_num1), (_num2))
+					break;
+			}
+		break;
 	}
+	
 	return int64(_result);
 }
