@@ -34,7 +34,7 @@ if(_btn){
 			}
 		}
 		else{ // botao que aparece ao final do jogo (continuar)
-			update_level();
+			update_level(stars);
 		}
 	}
 }

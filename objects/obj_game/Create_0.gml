@@ -8,5 +8,4 @@ draw_deck(_deck);
 _selectedCards = array_create(3, undefined); // primeira posicao: num1; segunda: operacao; terceira: num2
 number = irandom(30);
 _round = 1;
-//end_game(_deck, number, 2);
 stars = 0;

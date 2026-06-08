@@ -57,3 +57,11 @@ function get_stars(number, _result){
 		_stars = 3;
 	return _stars;
 }
+
+function update_level(stars){
+	if(global.choosedLevel == global.levelsUnlocked)
+		global.levelsUnlocked++;
+	if(global.stars[global.choosedLevel-1] < stars)
+		global.stars[global.choosedLevel-1] = stars;
+	room_goto(rm_menu);
+}

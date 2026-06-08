@@ -56,9 +56,3 @@ function shine_button(btn){
 	btn.image_blend = c_red;
 	btn.alarm[0] = 10;
 }
-
-function update_level(){
-	if(global.choosedLevel == global.levelsUnlocked)
-		global.levelsUnlocked++;
-	room_goto(rm_menu);
-}
