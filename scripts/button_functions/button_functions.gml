@@ -27,30 +27,18 @@ function menu_buttons(_button){
 }
 
 function confirm_button(_cards, _round){
-	_op = _cards[1].image_index;
-	if(_round > 1)
+	_op = get_card_number_or_operation(_cards[1]);
+	show_debug_message(_op);
+	if(_round > 1) // se está no segundo round por exemplo, a primeira posição é ocupada pelo resultado da conta anterior (então nao faz sentido pegar o frame)
 		_num1 = _cards[0];
 	else
-		_num1 = _cards[0].image_index;
-	_num2 = _cards[2].image_index;
-	_result = 0;
+		_num1 = get_card_number_or_operation(_cards[0]);
+	_num2 = get_card_number_or_operation(_cards[2]);
+	
 	if(_op == 13 && _num2 == 0) // verifica se tem divisao por 0
 		return false;
-	switch(_op){
-		case 10: // sprite da soma
-			_result = _num1 + _num2;
-			break;
-		case 11: // sprite da subtracao
-			_result = _num1 - _num2;
-			break;
-		case 12: // sprite da multiplicacao
-			_result = _num1*_num2;
-			break;
-		case 13: // sprite da divisao
-			_result = (_num1)/(_num2);
-			break;
-	}
-	_result = int64(_result);
+		
+	_result = get_result(_num1, _num2, _op);
 	clear_selected(_cards, _round);
 	_cards[0] = _result;
 	return true;

@@ -76,3 +76,30 @@ function return_to_deck(_card, _selectedCards, _deck){
 	else
 		ds_list_insert(_deck, 0, _card);
 }
+
+function get_card_number_or_operation(_card){
+	frame = _card.image_index;
+	if(frame % 2 == 0) // entra quando a carta nao estiver no frame de selecionada
+		return (frame - int64(frame/2)); // como todas as cartas estão duplicadas, retorna o frame - a metade dela
+	else // entra quando a carta está na "animação" de selecionada
+		return (frame - int64(frame/2) - 1);
+}
+
+function get_result(_num1, _num2, _op){
+	_result = 0;
+	switch(_op){
+		case 10: // sprite da soma
+			_result = _num1 + _num2;
+			break;
+		case 11: // sprite da subtracao
+			_result = _num1 - _num2;
+			break;
+		case 12: // sprite da multiplicacao
+			_result = _num1*_num2;
+			break;
+		case 13: // sprite da divisao
+			_result = (_num1)/(_num2);
+			break;
+	}
+	return int64(_result);
+}

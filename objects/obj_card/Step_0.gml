@@ -1,6 +1,6 @@
 if(!_selected){
 	if(position_meeting(mouse_x, mouse_y, self))
-		y = 140;
+		image_index = normal_index + 1;
 	else
-		y = y_on_deck;
+		image_index = normal_index;
 }

@@ -18,13 +18,15 @@ function create_main_deck(){
 	for(i = 0; i < 10; i++)
 	{
 		_card = instance_create_layer(0, 0, "Instances", obj_card);
-		_card.image_index = i;
+		_card.image_index = 2*i; // os frames das cartas paradas são os pares (os impares são os frames delas selecionadas)
+		_card.normal_index = _card.image_index;
 		instance_deactivate_object(_card);
 		global.deckNumbers[| i] = _card; // cria as instancias do deck de numeros
 		if(i < 4) // cria as instancias do deck de operacoes
 		{
 			_card = instance_create_layer(0, 0, "Instances", obj_card);
-			_card.image_index = i+10;
+			_card.image_index = 2*(i+10);
+			_card.normal_index = _card.image_index;
 			_card.is_op = true;
 			instance_deactivate_object(_card);
 			global.deckOperations[| i] = _card;
