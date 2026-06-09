@@ -9,6 +9,19 @@ function event_functions(){
 		var texto_final = arsenal_eventos[indice_sorteado];
 		return texto_final;
 }
+function give_player_first_cards(_deck){
+	switch(global.choosedLevel){
+		case 1:
+			give_player_cards(_deck, 5, 2);
+			break;
+		case 2:
+			give_player_cards(_deck, 5, 3);
+			break;
+		case 3:
+			give_player_cards(_deck, 5, 2, 1);
+			break;
+	}
+}
 
 function new_round(deck, _round, number, _result){
 	switch(_round){
@@ -30,7 +43,8 @@ function new_round(deck, _round, number, _result){
 
 function clear_lists(deck){
 	ds_list_destroy(global.deckNumbers);
-	ds_list_destroy(global.deckOperations);
+	ds_list_destroy(global.deckOperationsN);
+	ds_list_destroy(global.deckOperationsF);
 	instance_destroy(obj_card);
 	ds_list_destroy(deck);
 
