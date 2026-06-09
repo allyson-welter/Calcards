@@ -7,8 +7,7 @@ function event_functions(){
 		var total_de_textos = array_length(arsenal_eventos);
         var indice_sorteado = irandom(total_de_textos - 1);
 		var texto_final = arsenal_eventos[indice_sorteado];
-		return {indice: indice_sorteado,
-			texto: texto_final};
+		return texto_final;
 }
 function give_player_first_cards(_deck){
 	switch(global.choosedLevel){
