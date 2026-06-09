@@ -24,10 +24,11 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2026.0.0.15",
+    "IDEVersion":"2026.0.0.16",
   },
   "name":"Calcards",
   "resources":[
+    {"id":{"name":"fnt_event","path":"fonts/fnt_event/fnt_event.yy",},},
     {"id":{"name":"fnt_number","path":"fonts/fnt_number/fnt_number.yy",},},
     {"id":{"name":"fnt_result","path":"fonts/fnt_result/fnt_result.yy",},},
     {"id":{"name":"fnt_tutorial","path":"fonts/fnt_tutorial/fnt_tutorial.yy",},},
@@ -56,6 +57,7 @@
     {"id":{"name":"spr_cardsNumbersPositive","path":"sprites/spr_cardsNumbersPositive/spr_cardsNumbersPositive.yy",},},
     {"id":{"name":"spr_cardsOperations","path":"sprites/spr_cardsOperations/spr_cardsOperations.yy",},},
     {"id":{"name":"spr_centerBackground","path":"sprites/spr_centerBackground/spr_centerBackground.yy",},},
+    {"id":{"name":"Spr_event","path":"sprites/Spr_event/Spr_event.yy",},},
     {"id":{"name":"spr_gameBackgroundClouds","path":"sprites/spr_gameBackgroundClouds/spr_gameBackgroundClouds.yy",},},
     {"id":{"name":"spr_gameBackgroundStars","path":"sprites/spr_gameBackgroundStars/spr_gameBackgroundStars.yy",},},
     {"id":{"name":"spr_handBackground","path":"sprites/spr_handBackground/spr_handBackground.yy",},},
