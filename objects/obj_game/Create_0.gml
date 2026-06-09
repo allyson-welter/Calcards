@@ -6,6 +6,6 @@ create_main_deck();
 give_player_cards(_deck, 5, 2); // expliquei um pouco dessa funcao em create_card_functions
 draw_deck(_deck); // funcao que organiza na tela as cartas do jogador
 _selectedCards = array_create(3, undefined); // array que armazena as cartas selecionadas; primeira posicao: num1; segunda: operacao; terceira: num2
-number = irandom(30); // numero que o jogador deve atingir
+number = get_random_number(); // numero que o jogador deve atingir
 _round = 1; 
 stars = 0;

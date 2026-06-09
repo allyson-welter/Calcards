@@ -28,7 +28,6 @@ function menu_buttons(_button){
 
 function confirm_button(_cards, _round){
 	_op = get_card_number_or_operation(_cards[1]);
-	show_debug_message(_op);
 	if(_round > 1) // se está no segundo round por exemplo, a primeira posição é ocupada pelo resultado da conta anterior (então nao faz sentido pegar o frame)
 		_num1 = _cards[0];
 	else

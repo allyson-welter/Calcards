@@ -65,3 +65,19 @@ function update_level(stars){
 		global.stars[global.choosedLevel-1] = stars;
 	room_goto(rm_menu);
 }
+
+function get_random_number(){
+	number = 0;
+	switch(global.choosedLevel){
+		case 1:
+			number = irandom(30);
+			break;
+		case 2:
+			number = irandom_range(-30, 100);
+			break;
+		case 3:
+			number = irandom_range(-100, 1000);
+			break;			
+	}
+	return number;
+}

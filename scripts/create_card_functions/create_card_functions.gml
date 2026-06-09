@@ -15,41 +15,29 @@ function give_player_cards(deck, _num, _op){ // _num é a quantidade de cartas d
 	}
 }
 function create_main_deck(){ // essa funcao cria o baralho principal (as cartas possiveis que o player pode ter)
+	operations_unlocked = get_unlocked_operations();
+	negative_unlocked = get_unlocked_negative();
 	for(i = 0; i < 10; i++)
 	{
-		_card = instance_create_layer(0, 0, "Instances", obj_card);
-		_card.sprite_index = spr_cardsNumbers;
-		_card.image_index = 2*i; // os frames das cartas paradas são os pares (os impares são os frames delas selecionadas)
-		_card.normal_index = _card.image_index;
-		instance_deactivate_object(_card);
-		global.deckNumbers[| i] = _card; // cria as instancias do deck de numeros
-		
-		switch(global.choosedLevel){
-			case 1:
-			if(i < 4) // cria as instancias do deck de operacoes
-		{
-			_card = instance_create_layer(0, 0, "Instances", obj_card);
-			_card.sprite_index = spr_cardsOperations;
-			_card.image_index = 2*i;
-			_card.normal_index = _card.image_index;
-			_card.is_op = true;
-			instance_deactivate_object(_card);
-			global.deckOperations[| i] = _card;
-		}
-			break;
-		
-			case 2:
-				if(i < 6) // cria as instancias do deck de operacoes
-				{
-					_card = instance_create_layer(0, 0, "Instances", obj_card);
-					_card.sprite_index = spr_cardsOperations;
-					_card.image_index = 2*i;
-					_card.normal_index = _card.image_index;
-					_card.is_op = true;
-					instance_deactivate_object(_card);
-					global.deckOperations[| i] = _card;
-				}
-			break;
-		}
+		_card = create_card(spr_cardsNumbersPositive, 2*i, false); // cria as instancias do deck de numeros
+		ds_list_add(global.deckNumbers, _card);
 	}
+	for(i = 0; i < operations_unlocked; i++){ // cria as instancias do deck de operacoes
+		_card = create_card(spr_cardsOperations, 2*i, true);
+		ds_list_add(global.deckOperations, _card);
+	}
+	for(i = 0; i < negative_unlocked; i++){
+		_card = create_card(spr_cardsNumbersNegative, 2*i, false);
+		ds_list_add(global.deckNumbers, _card);
+	}
+}
+
+function create_card(_sprite, _frame, is_op){
+		_card = instance_create_layer(0, 0, "Instances", obj_card);
+		_card.sprite_index = _sprite;
+		_card.image_index = _frame;
+		_card.normal_index = _card.image_index;
+		_card.is_op = is_op;
+		instance_deactivate_object(_card);
+		return _card;
 }
