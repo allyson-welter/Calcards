@@ -1,0 +1,1 @@
+global.trava_carta = false;

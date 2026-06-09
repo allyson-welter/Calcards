@@ -59,6 +59,7 @@ function clear_selected(_cards, _round){
 		i = 1;
 	else
 		i = 0;
+		
 	for(; i < 3; i++){
 		_card = _cards[i];
 		_cards[i]._selected = false;

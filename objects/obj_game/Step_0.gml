@@ -1,6 +1,6 @@
 _inst = instance_position(mouse_x, mouse_y, obj_card);
 
-if(_inst && global.trava_carta){
+if(_inst && !global.trava_carta){
 	if(mouse_check_button_pressed(mb_left)){
 		_choosed = choose_card(_inst, _selectedCards, deck);
 		
