@@ -10,36 +10,37 @@ function event_functions(){
 		return {indice: indice_sorteado,
 			texto: texto_final};
 }
-function give_player_first_cards(_deck){
-	switch(global.choosedLevel){
-		case 1:
-			give_player_cards(_deck, 5, 2);
-			break;
-		case 2:
-			give_player_cards(_deck, 5, 3);
-			break;
-		case 3:
-			give_player_cards(_deck, 5, 2, 1);
-			break;
-	}
-}
 
-function new_round(deck, _round, number, _result){
+function new_round(deck, _round, number, _result, cards_to_give){
 	switch(_round){
 		case 2:
-		give_player_cards(deck, 0, 1);
+		show_debug_message(cardsToGiveEachRound[0]);
+		give_player_cards(deck, cardsToGiveEachRound[3], cardsToGiveEachRound[4], cardsToGiveEachRound[5]);
 		draw_deck(deck);
-		shine_card(deck[| ds_list_size(deck) - 1]);
 			break;
 		case 3:
-		give_player_cards(deck, 1, 0);
+		give_player_cards(deck, cardsToGiveEachRound[6], cardsToGiveEachRound[7], cardsToGiveEachRound[8]);
 		draw_deck(deck);
-		shine_card(deck[| 0]);
 			break;
 		case 4:
 		end_game(deck, number, _result);
 			break;
 	}
+}
+
+function number_of_cards_to_give_player(){ // funcao pra saber quais cartas dar por rodada a depender do level
+	switch(global.choosedLevel){
+		case 1:
+			cards_to_give = [5, 2, 0, 1, 1, 0, 2, 1, 0];
+			break;
+		case 2:
+			cards_to_give = [5, 3, 0, 1, 2, 0, 2, 1, 0];
+			break;
+		case 3:
+			cards_to_give = [5, 2, 1, 0, 1, 1, 1, 0, 1];
+			break;
+	}
+	return cards_to_give;
 }
 
 function clear_lists(deck){
@@ -91,7 +92,7 @@ function get_random_number(){
 			number = irandom_range(-30, 100);
 			break;
 		case 3:
-			number = irandom_range(-100, 1000);
+			number = irandom_range(-300, 999);
 			break;			
 	}
 	return number;

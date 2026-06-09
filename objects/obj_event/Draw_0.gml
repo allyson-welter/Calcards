@@ -1,5 +1,5 @@
 if (controle && obj_game._round <= 3) {
-    draw_sprite(Spr_event, 0, x, y);
+    draw_sprite(spr_event, 0, x, y);
     
     draw_set_color(c_black); 
     draw_set_halign(fa_center);

@@ -27,7 +27,7 @@ if(_btn){
 				refresh_confirm_button(_selectedCards);
 				_round++;
 				stars = get_stars(number, _selectedCards[0]);
-				new_round(deck, _round, number, _selectedCards[0]);
+				new_round(deck, _round, number, _selectedCards[0], cardsToGiveEachRound);
 			}
 			else{
 				shine_button(obj_button); // funcao pra piscar o botao em vermelho

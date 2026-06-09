@@ -59,7 +59,7 @@
     {"id":{"name":"spr_cardsNumbersPositive","path":"sprites/spr_cardsNumbersPositive/spr_cardsNumbersPositive.yy",},},
     {"id":{"name":"spr_cardsOperations","path":"sprites/spr_cardsOperations/spr_cardsOperations.yy",},},
     {"id":{"name":"spr_centerBackground","path":"sprites/spr_centerBackground/spr_centerBackground.yy",},},
-    {"id":{"name":"Spr_event","path":"sprites/Spr_event/Spr_event.yy",},},
+    {"id":{"name":"spr_event","path":"sprites/spr_event/spr_event.yy",},},
     {"id":{"name":"spr_gameBackgroundClouds","path":"sprites/spr_gameBackgroundClouds/spr_gameBackgroundClouds.yy",},},
     {"id":{"name":"spr_gameBackgroundStars","path":"sprites/spr_gameBackgroundStars/spr_gameBackgroundStars.yy",},},
     {"id":{"name":"spr_handBackground","path":"sprites/spr_handBackground/spr_handBackground.yy",},},

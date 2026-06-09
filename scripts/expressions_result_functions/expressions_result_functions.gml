@@ -15,6 +15,7 @@ function get_result_operationF(_num1, _func){
 			_result = power(_num1, 1/(_num1));
 			break;
 	}
+	_result = get_bounded_result(_result);
 	return int64(_result);
 }
 function get_result_operationN(_num1, _num2, _op){
@@ -40,6 +41,7 @@ function get_result_operationN(_num1, _num2, _op){
 			_result = (_num1)*sqrt(_num2);
 			break;
 	}
+	_result = get_bounded_result(_result); // limita o resultado pra 999 ou -999
 	return int64(_result);
 }
 function is_expression_valid(_num1, _num2 = 0, _op, has_function = false){
@@ -65,4 +67,13 @@ function fac(_x){
 	for(i = 2; i <= _x; i++)
 		_res *= i;
 	return _res;
+}
+
+function get_bounded_result(_result){
+	if(_result > 999)
+		return 999;
+	else if(_result < -999)
+		return -999;
+	else
+		return _result;
 }
