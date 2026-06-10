@@ -1,16 +1,3 @@
-function event_functions(){
-	var arsenal_eventos = [
-            "SURPRESA! AGORA VOCÊ DEVE ADICIONAR MAIS UMA UNIDADE EM UMA CARTA DE NUMERO.",
-            "SURPRESA! AGORA VOCÊ DEVE DIMINUIR UMA UNIDADE EM UMA CARTA DE NUMERO.",
-            "SURPRESA! VOCÊ DEVE DESCARTAR UMA CARTA DE OPERAÇÃO E COMPRAR UMA NOVA."
-        ];
-		var total_de_textos = array_length(arsenal_eventos);
-        var indice_sorteado = irandom(total_de_textos - 1);
-		var texto_final = arsenal_eventos[indice_sorteado];
-		return {indice: indice_sorteado,
-			texto: texto_final};
-}
-
 function new_round(deck, _round, number, _result, cards_to_give){
 	switch(_round){
 		case 2:
@@ -63,18 +50,20 @@ function end_game(deck, number, _result){
 
 function get_stars(number, _result){
 	_diff = abs(number - _result);
-	if(_diff > 10) // 0 estrelas
+	_range = get_number_range();
+	_error = _diff/(_range[1] - _range[0])*100; // erro em % (sobre o total do intervalo)
+	if(_error > 15) // 0 estrelas (erro de >15%)
 		_stars = 0;
-	else if(_diff > 5) // 1 estrela
+	else if(_diff > 7.5) // 1 estrela (erro de >7.5%)
 		_stars = 1;
-	else if(_diff > 0) // 2 estrelas
+	else if(_diff > 0) // 2 estrelas (erro de >0%)
 		_stars = 2;
-	else // 3 estrelas (_diff = 0)
+	else // 3 estrelas (erro de 0%)
 		_stars = 3;
 	return _stars;
 }
 
-function update_level(stars){
+function update_level_unlocked(stars){
 	if(global.choosedLevel == global.levelsUnlocked)
 		global.levelsUnlocked++;
 	if(global.stars[global.choosedLevel-1] < stars)
@@ -83,17 +72,18 @@ function update_level(stars){
 }
 
 function get_random_number(){
-	number = 0;
-	switch(global.choosedLevel){
-		case 1:
-			number = irandom(30);
-			break;
-		case 2:
-			number = irandom_range(-30, 100);
-			break;
-		case 3:
-			number = irandom_range(-300, 999);
-			break;			
-	}
+	number_range = get_number_range();
+	number = irandom_range(number_range[0], number_range[1]);
 	return number;
+}
+
+function get_number_range(){
+	switch(global.choosedLevel){
+		case 1:	
+			return [0, 30]; // ex: no level 1, o numero aleatório só pode ir de 0 a 30
+		case 2:
+			return [-30, 100];
+		case 3:
+			return [-300, 999];
+	}
 }

@@ -45,6 +45,7 @@
     {"id":{"name":"cards_info_functions","path":"scripts/cards_info_functions/cards_info_functions.yy",},},
     {"id":{"name":"create_card_functions","path":"scripts/create_card_functions/create_card_functions.yy",},},
     {"id":{"name":"draw_card_functions","path":"scripts/draw_card_functions/draw_card_functions.yy",},},
+    {"id":{"name":"event_functions","path":"scripts/event_functions/event_functions.yy",},},
     {"id":{"name":"expressions_result_functions","path":"scripts/expressions_result_functions/expressions_result_functions.yy",},},
     {"id":{"name":"round_functions","path":"scripts/round_functions/round_functions.yy",},},
     {"id":{"name":"select_card_functions","path":"scripts/select_card_functions/select_card_functions.yy",},},

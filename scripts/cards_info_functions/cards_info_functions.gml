@@ -1,10 +1,5 @@
 function get_card_number_or_operation(_card){
-	frame = _card.image_index;
-	_num = 0;
-	if(frame % 2 == 0) // entra quando a carta nao estiver no frame de selecionada
-		_num = frame - int64(frame/2); // como todas as cartas estão duplicadas, retorna o frame - a metade dela
-	else // entra quando a carta está na "animação" de selecionada
-		_num = frame - int64(frame/2) - 1;
+	_num = _card.image_index;
 		
 	if(_card.is_op || _card.is_function)
 		return _num;

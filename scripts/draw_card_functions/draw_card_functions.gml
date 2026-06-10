@@ -1,17 +1,21 @@
-function draw_deck(deck){
-	for(i = 0; i < ds_list_size(deck); i++){
+function draw_deck(deck, _scale = 0.35){
+	last_index = ds_list_size(deck) - 1;
+	for(i = 0; i <= last_index; i++){
+		_card = deck[| i];
+		_card.scale = _scale
+		_card.image_xscale = _scale;
+		_card.image_yscale = _scale;
 		if(i == 0)
 			posX = 30;
 		else
-			posX = deck[| i-1].bbox_right + deck[| i].sprite_width*0.5 + 5;
+			posX = deck[| i-1].bbox_right + _card.sprite_width*0.5 + 5;
 			
-		
-		deck[| i].x = posX;	
-		deck[| i].y = 145;
-		deck[| i].image_xscale = 0.35;
-		deck[| i].image_yscale = 0.35;
-		deck[| i]._selected = false;
+		_card.x = posX;	
+		_card.y = 145;
+		_card._selected = false;
 	}
+	if(deck[| last_index].bbox_right > 308)
+		draw_deck(deck, _scale - 0.05);
 }
 
 function draw_selectedCards(_selectedCards, _round){

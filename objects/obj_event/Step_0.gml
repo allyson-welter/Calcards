@@ -1,5 +1,5 @@
 _insta = instance_position(mouse_x, mouse_y, obj_button);
-_inst = instance_position(mouse_x, mouse_y, obj_card); // essa funcao ta dentro do round_functions
+_inst = instance_position(mouse_x, mouse_y, obj_card);
 if(_insta){
 
 	if(mouse_check_button_pressed(mb_left)){
@@ -15,7 +15,6 @@ if(_insta){
 			switch(dados.indice){
 				case 0:
 					if(!_inst.is_op){
-						_inst.normal_index+=2;
 						_inst.image_index+=1;
 						controle = false;
 						alarm[0] = 5;
@@ -27,7 +26,6 @@ if(_insta){
 					break;
 				case 1:
 					if(!_inst.is_op){
-						_inst.normal_index-=2;
 						_inst.image_index-=1;
 						controle = false;
 						alarm[0] = 5;
