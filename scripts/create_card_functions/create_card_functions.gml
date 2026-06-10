@@ -2,7 +2,6 @@ function give_player_cards(_deck, _num, _op, _func = 0){ // _num é a quantidade
 	ds_list_shuffle(global.deckOperationsN);
 	ds_list_shuffle(global.deckNumbers);
 	ds_list_shuffle(global.deckOperationsF);
-	show_debug_message(_num);
 
 	for(i = 0; i < _num; i++)
 	{
