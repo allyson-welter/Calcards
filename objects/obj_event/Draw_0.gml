@@ -1,4 +1,4 @@
-if (controle && obj_game._round <= 3) {
+if (global.trava_carta && obj_game._round <= 3) {
     draw_sprite(spr_event, 0, x, y);
     
     draw_set_color(c_black); 
