@@ -68,6 +68,7 @@
     {"id":{"name":"spr_gameBackgroundStars","path":"sprites/spr_gameBackgroundStars/spr_gameBackgroundStars.yy",},},
     {"id":{"name":"spr_handBackground","path":"sprites/spr_handBackground/spr_handBackground.yy",},},
     {"id":{"name":"spr_number","path":"sprites/spr_number/spr_number.yy",},},
+    {"id":{"name":"spr_rodadas","path":"sprites/spr_rodadas/spr_rodadas.yy",},},
     {"id":{"name":"spr_star","path":"sprites/spr_star/spr_star.yy",},},
     {"id":{"name":"spr_starsTab","path":"sprites/spr_starsTab/spr_starsTab.yy",},},
     {"id":{"name":"spr_textBackground","path":"sprites/spr_textBackground/spr_textBackground.yy",},},

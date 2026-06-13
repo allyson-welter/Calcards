@@ -27,8 +27,9 @@ function create_main_deck(){ // essa funcao cria o baralho principal (as cartas 
 	operations_unlocked = get_unlocked_operations();
 	negatives_unlocked = get_unlocked_negative();
 	functions_unlocked = get_unlocked_functions();
+	positives_unlocked = get_unlocked_positive();
 	
-	for(i = 0; i < 10; i++)  // cria as instancias dos numeros positivos
+	for(i = 0; i < positives_unlocked; i++)  // cria as instancias dos numeros positivos
 	{
 		_card = create_card(spr_cardsNumbersPositive, i, false); // cria as instancias do deck de numeros positivos
 		ds_list_add(global.deckNumbers, _card);
@@ -44,6 +45,9 @@ function create_main_deck(){ // essa funcao cria o baralho principal (as cartas 
 	for(i = 0; i < functions_unlocked; i++){
 		_card = create_card(spr_cardsFunctions, i,, true);	
 		ds_list_add(global.deckOperationsF, _card);
+	}
+	if(global.belettiMode){
+		create_binary_operators();
 	}
 }
 

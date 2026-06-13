@@ -26,7 +26,10 @@ function get_unlocked_negative(){
 		case 2:
 			return 4;
 		case 3:
-			return 9;
+			var neg = 9;
+			if(global.belettiMode)
+				neg = 15;
+			return neg;
 	}
 }
 
@@ -40,4 +43,10 @@ function get_unlocked_functions(){
 	}
 }
 
+function get_unlocked_positive(){
+	if(global.belettiMode)
+		return 16;
+	else
+		return 10;
+}
 

@@ -19,9 +19,12 @@ function new_round_cards(){
 
 function update_round(){
 	with(obj_game){
+		if(_round < 3)
+			image_index++;
+			
+		_round++;
 		obj_event.controle = true;
 		refresh_confirm_button(_selectedCards);
-		_round++;
 		stars = get_stars(number, _selectedCards[0]);
 		result_to_draw = get_result_to_draw(_selectedCards[0]);
 		new_round_cards();

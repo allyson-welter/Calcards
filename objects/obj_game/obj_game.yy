@@ -31,7 +31,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_rodadas",
+    "path":"sprites/spr_rodadas/spr_rodadas.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

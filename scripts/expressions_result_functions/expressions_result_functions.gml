@@ -14,6 +14,9 @@ function get_result_operationF(_num1, _func){
 		case 3: // sprite de raiz x-ésima de x
 			_result = power(_num1, 1/(_num1));
 			break;
+		case 4: // sprite do NOT
+			_result = -(_num1 + 1);
+			break;
 	}
 	_result = get_bounded_result(_result);
 	return int64(_result);
@@ -39,6 +42,12 @@ function get_result_operationN(_num1, _num2, _op){
 			break;
 		case 5: // sprite da raiz
 			_result = (_num1)*sqrt(_num2);
+			break;
+		case 6: // sprite OR
+			_result =  _num1 | _num2;
+			break;
+		case 7: // sprite AND
+			_result = _num1 & _num2;
 			break;
 	}
 	_result = get_bounded_result(_result); // limita o resultado pra 999 ou -999
