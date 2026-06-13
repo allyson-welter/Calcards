@@ -1,17 +1,30 @@
-function new_round(deck, _round, number, _result, cards_to_give){
-	switch(_round){
-		case 2:
-		show_debug_message(cardsToGiveEachRound[0]);
-		give_player_cards(deck, cardsToGiveEachRound[3], cardsToGiveEachRound[4], cardsToGiveEachRound[5]);
-		draw_deck(deck);
+function new_round_cards(){
+	with(obj_game){
+		switch(_round){
+			case 2:
+			give_player_cards(deck, cardsToGiveEachRound[3], cardsToGiveEachRound[4], cardsToGiveEachRound[5]);
+			draw_deck(deck);
 			break;
 		case 3:
-		give_player_cards(deck, cardsToGiveEachRound[6], cardsToGiveEachRound[7], cardsToGiveEachRound[8]);
-		draw_deck(deck);
+			give_player_cards(deck, cardsToGiveEachRound[6], cardsToGiveEachRound[7], cardsToGiveEachRound[8]);
+			draw_deck(deck);
 			break;
 		case 4:
-		end_game(deck, number, _result);
+			var result = _selectedCards[0];
+			end_game(deck, number, result);
 			break;
+		}
+	}
+}
+
+function update_round(){
+	with(obj_game){
+		obj_event.controle = true;
+		refresh_confirm_button(_selectedCards);
+		_round++;
+		stars = get_stars(number, _selectedCards[0]);
+		result_to_draw = get_result_to_draw(_selectedCards[0]);
+		new_round_cards();
 	}
 }
 
@@ -86,4 +99,18 @@ function get_number_range(){
 		case 3:
 			return [-300, 999];
 	}
+}
+
+function get_number_to_draw(number){
+	if(global.belettiMode)
+		return change_number_base(number, 16);
+	else
+		return number;
+}
+
+function get_result_to_draw(result){
+	if(global.belettiMode)
+		return change_number_base(result, 16);
+	else
+		return result;
 }

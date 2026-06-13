@@ -24,11 +24,7 @@ if(_btn){
 		if(_btn.button_type == "confirm"){ // botao de confirmar as cartas selecionadas
 			_valid = confirm_button(_selectedCards, _round);
 			if(_valid){ // esse valid é se a operacao foi valida (ex: se tem divisão por 0, valid da false)
-				obj_event.controle = true;
-				refresh_confirm_button(_selectedCards);
-				_round++;
-				stars = get_stars(number, _selectedCards[0]);
-				new_round(deck, _round, number, _selectedCards[0], cardsToGiveEachRound);
+				update_round();
 			}
 			else{
 				shine_button(obj_button); // funcao pra piscar o botao em vermelho

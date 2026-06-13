@@ -11,3 +11,6 @@ _selectedCards = array_create(3, undefined); // array que armazena as cartas sel
 number = get_random_number(); // numero que o jogador deve atingir
 _round = 1; 
 stars = 0;
+number_to_draw = get_number_to_draw(number);
+result_to_draw = noone;
+translateHex = false;

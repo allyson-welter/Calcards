@@ -26,6 +26,7 @@ function menu_buttons(_button){
 	}
 }
 
+
 function confirm_button(_cards, _round){
 	has_function = _cards[1].is_function;
 	_op = get_card_number_or_operation(_cards[1]);

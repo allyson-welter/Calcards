@@ -9,19 +9,19 @@ function define_text_display(){
 	switch(textNum){
 		case 0:
 			title = "TUTORIAL";
-			text = "Bem-vindo ao Calcards. Neste tutorial, voce aprendera o necessario para entender o jogo e joga-lo da maneira correta.\n\nQuando quiser ir para a proxima pagina do tutorial, clique em continuar.";
+			text = "Bem-vindo ao Calcards. Neste tutorial, você aprenderá o necessário para entender o jogo e jogá-lo da maneira correta.\n\nQuando quiser ir para a próxima página do tutorial, clique em continuar.";
 			break;
 		case 1:
 			title = "REGRAS DO JOGO";
-			text = "O jogo sera dividido em 3 Fases:\n- Fase 1: Soma, Subtracao, Multiplicacao e Divisao.\n- Fase 2: Anterior + Potenciacao e Radiciacao.\n- Fase 3: Anterior + Funcoes Especiais.\n\nEm cada partida, voce recebera 7 cartas na mao\n(valores de 1 a 9):\n- 4 Cartas de Numeros\n- 3 Cartas de Operacoes";
+			text = "O objetivo do jogo é chegar o mais próximo possível do número-alvo gerado aleatoriamente.\n\nVocê começa a partida com uma mão de 7 a 8 cartas. Essas cartas podem ser números, operações ou funções.\n\nA partida possui 3 rodadas, e em cada uma delas você deve usar suas cartas para construir um resultado.\n\nAo final da terceira rodada, seu resultado final será comparado com o número-alvo para calcular sua pontuação.";
 			break;
 		case 2:
 			title = "COMO JOGAR";
-			text = "O jogo dura 3 rodadas acumulando pontos:\n\nR1: Jogue 2 numeros e 1 operacao.\n    (Ex: 5 + 3 = total inicial 8)\n\nR2: Ative a condicao especial da mesa.\n    Depois, jogue 1 operacao e 1 numero.\n\nR3: Ative a condicao especial.\n    Jogue suas ultimas 2 cartas.";
+			text = "Na primeira rodada, você deve escolher 2 cartas de número e 1 carta de operação para formar uma conta. Também é possível usar 1 carta de número e 1 carta de função.\n\nO resultado obtido nessa rodada será usado como base para a próxima jogada.\n\nNa segunda e na terceira rodada, você deve escolher 1 carta de operação e 1 carta de número, ou então 1 carta de função. O resultado anterior será usado como o número que falta na operação ou como entrada da função.\n\nAntes de cada nova rodada, exceto a primeira, um evento aleatório acontece. Esse evento pode trocar uma carta de operação ou alterar uma carta de número, aumentando ou diminuindo seu valor em 1 unidade.";
 			break;
 		case 3:	
 			title = "PONTUACAO E RECOMPENSAS";
-			text = "Sua nota depende do alvo:\n\n- 3 estrelas: Cravar o numero exato.\n- 2 estrelas: Erro de ate 5 (+/-).\n- 1 estrela: Erro de ate 10 (+/-).\n  *Exibe sua porcentagem de precisao.\n\n- Derrota: Erro maior que 10.\n\nE ai, esta pronto para jogar?";
+			text = "A pontuação é calculada com base na diferença entre o seu resultado final e o número-alvo.\n\nEssa diferença é chamada de erro. Quanto menor o erro, melhor será sua pontuação.\n\nPara calcular o desempenho, o erro é dividido pelo intervalo de valores possíveis do número-alvo. Por exemplo, se o número-alvo pode variar de 2 a 100, o intervalo é 98.\n\nA quantidade de estrelas recebida depende desse erro percentual: 3 estrelas para acerto exato, 2 estrelas para erro de até 5%, 1 estrela para erro de até 15% e 0 estrelas para erro maior que 15%.";
 			break;
 	}
 }

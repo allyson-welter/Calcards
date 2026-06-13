@@ -24,7 +24,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2026.0.0.16",
+    "IDEVersion":"2026.0.0.15",
   },
   "name":"Calcards",
   "resources":[
@@ -37,6 +37,7 @@
     {"id":{"name":"obj_event","path":"objects/obj_event/obj_event.yy",},},
     {"id":{"name":"obj_game","path":"objects/obj_game/obj_game.yy",},},
     {"id":{"name":"obj_menu","path":"objects/obj_menu/obj_menu.yy",},},
+    {"id":{"name":"obj_squareCheck","path":"objects/obj_squareCheck/obj_squareCheck.yy",},},
     {"id":{"name":"obj_tutorial","path":"objects/obj_tutorial/obj_tutorial.yy",},},
     {"id":{"name":"rm_game","path":"rooms/rm_game/rm_game.yy",},},
     {"id":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
@@ -49,7 +50,9 @@
     {"id":{"name":"expressions_result_functions","path":"scripts/expressions_result_functions/expressions_result_functions.yy",},},
     {"id":{"name":"round_functions","path":"scripts/round_functions/round_functions.yy",},},
     {"id":{"name":"select_card_functions","path":"scripts/select_card_functions/select_card_functions.yy",},},
+    {"id":{"name":"squareCheck_functions","path":"scripts/squareCheck_functions/squareCheck_functions.yy",},},
     {"id":{"name":"seq_card","path":"sequences/seq_card/seq_card.yy",},},
+    {"id":{"name":"spr_belettiMode","path":"sprites/spr_belettiMode/spr_belettiMode.yy",},},
     {"id":{"name":"spr_buttonConfirm","path":"sprites/spr_buttonConfirm/spr_buttonConfirm.yy",},},
     {"id":{"name":"spr_buttonContinuar","path":"sprites/spr_buttonContinuar/spr_buttonContinuar.yy",},},
     {"id":{"name":"spr_buttonLevels","path":"sprites/spr_buttonLevels/spr_buttonLevels.yy",},},
