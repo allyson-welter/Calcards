@@ -1,10 +1,28 @@
-function square_checked(square){
+function square_checked(square = self){
 	switch(square.squareType){
 		case "belettiMode":
 			global.belettiMode = !global.belettiMode;
+			square.image_index = global.belettiMode;
 			break;
 		case "translateHex":
 			obj_game.translateHex = !obj_game.translateHex;
+			var dec_index = 2;
+			var bin_index = 3;
+			if(square.image_index == 0){
+				obj_game.translated_random_number = obj_game.number;
+				square.image_index = dec_index;
+				square.text = "Traduzir para base binária";
+			}
+			else if(image_index == dec_index){
+				obj_game.translated_random_number = "";
+				square.image_index = bin_index;
+				square.text = "Não traduzir a base hexadecimal";
+			}
+			else{
+				obj_game.translated_random_number = "";
+				square.image_index = 0;
+				square.text = "Traduzir para base decimal";
+			}
 			break;
 	}
 }
@@ -13,24 +31,24 @@ function change_number_base(num, base = 16){
 	if(num == 0)
 		return "0";
 	var _num = abs(num);
-	var hex = "";
+	var num_base = "";
 	var max_pow = 0;
 	
-	while(power(16, max_pow) <= _num)
+	while(power(base, max_pow) <= _num)
 			max_pow++;
 	max_pow--;
 	for(var i = max_pow; i >= 0; i--){
 		var res = int64(_num/(power(16, i)));
-		hex += int_digit_to_hex(res);
+		num_base += change_digit_base(res, base);
 		_num -= res*power(16, i);
 	}
 	if(num > 0)
-		return hex;
+		return num_base;
 	else
-		return "-" + hex;
+		return "-" + num_base;
 }
 
-function int_digit_to_hex(digit){
+function change_digit_base(digit, base = 16){
 	if(digit < 10)
 		return string(digit);
 	switch(digit){

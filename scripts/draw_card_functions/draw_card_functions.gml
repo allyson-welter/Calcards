@@ -18,8 +18,6 @@ function draw_deck(deck, _scale = 0.35, first_position = 25){
 		_card.y = 145;
 		_card._selected = false;
 	}
-	//if(deck[| last_index].bbox_right > 308)
-	//	draw_deck(deck, _scale - 0.05);
 }
 
 function draw_selectedCards(_selectedCards, _round){
@@ -27,7 +25,6 @@ function draw_selectedCards(_selectedCards, _round){
 	if(_round > 1)
 		i = 1;
 
-		
 	for(; i < 3; i++){
 		var _card = _selectedCards[i];
 		if(_card != undefined){
