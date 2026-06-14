@@ -50,3 +50,41 @@ function get_unlocked_positive(){
 		return 10;
 }
 
+function get_card_description(_card){
+	if(_card.type == "number")
+		return "";
+	if(_card.type == "operation"){
+		switch(_card.number){
+			case 0: // soma
+				return "Soma duas cartas";
+			case 1: // subt
+				return "Subtrai a primeira carta da segunda";
+			case 2: // mult
+				return "Multiplica duas cartas";
+			case 3: // div
+				return "Divide a primeira carta pela segunda";
+			case 4: // exp
+				return "Eleva a primeira carta pela segunda";
+			case 5: // sqrt
+				return "Multiplica a primeira carta pela raiz quadrada da segunda";
+			case 6: // or
+				return "Faz a operação binária OR entre a primeira carta e a segunda";
+			case 7: //and
+				return "Faz a operação binária AND entre a primeira carta e a segunda";
+		}
+	}
+	if(_card.type == "function"){
+		switch(_card.number){
+			case 0: // -x
+				return "Inverte o sinal da primeira carta";
+			case 1: // x^x
+				return "Eleva a primeira carta a ela mesma";
+			case 2: // x!
+				return "Faz o fatorial da primeira carta";
+			case 3: // raiz x-ésima de x
+				return "Faz a raiz da primeira carta com ela mesma como índice";
+			case 4: // not
+				return "Faz a operação binária NOT da primeira carta";
+		}
+	}
+}

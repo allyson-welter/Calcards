@@ -4,3 +4,5 @@ is_op = false; // variavel pra saber se a carta é uma operação ou não
 is_function = false; // variavel pra saber se a carta é uma função ou não
 number = 0;
 type = noone;
+text_description = "";
+box_x_size = 13;

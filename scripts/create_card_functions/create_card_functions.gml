@@ -61,5 +61,6 @@ function create_card(_sprite, _frame, is_op = false, is_function = false, type =
 		_card.number = i; 
 		_card.type = type;
 		instance_deactivate_object(_card);
+		_card.text_description = get_card_description(_card);
 		return _card;
 }
