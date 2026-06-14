@@ -29,9 +29,9 @@ function draw_selectedCards(_selectedCards, _round){
 		var _card = _selectedCards[i];
 		if(_card != undefined){
 			if(i == 1 && _card.is_function)
-				_card.x = 90;
+				_card.x = 80;
 			else
-				_card.x = 40 + 30*i;
+				_card.x = 30 + 30*i;
 				
 			_card.y = 80;
 			_card.image_xscale = 0.3;

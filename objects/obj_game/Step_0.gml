@@ -11,6 +11,7 @@ if(_inst && !global.trava_carta){
 			draw_selectedCards(_selectedCards, _round);
 			draw_deck(deck)
 			refresh_confirm_button(_selectedCards);
+			update_translated_info();
 		}
 	}
 }
@@ -33,4 +34,5 @@ if(_btn){
 		}
 	}
 }
-	
+
+

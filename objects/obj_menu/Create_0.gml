@@ -6,3 +6,4 @@ if(!variable_global_exists("levelsUnlocked")){
 obj_squareCheck.image_index = global.belettiMode;
 global.choosedLevel = 1;
 surface = noone;
+

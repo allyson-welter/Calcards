@@ -13,5 +13,3 @@ _round = 1;
 stars = 0;
 number_to_draw = get_number_to_draw(number);
 result_to_draw = noone;
-translateHex = false;
-translated_random_number = "";

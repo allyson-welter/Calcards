@@ -27,6 +27,7 @@ function update_round(){
 		refresh_confirm_button(_selectedCards);
 		stars = get_stars(number, _selectedCards[0]);
 		result_to_draw = get_result_to_draw(_selectedCards[0]);
+		update_translated_info();
 		new_round_cards();
 	}
 }
@@ -106,14 +107,14 @@ function get_number_range(){
 
 function get_number_to_draw(number){
 	if(global.belettiMode)
-		return change_number_base(number, 16);
+		return decimal_to_hex(number);
 	else
 		return number;
 }
 
 function get_result_to_draw(result){
 	if(global.belettiMode)
-		return change_number_base(result, 16);
+		return decimal_to_hex(result);
 	else
 		return result;
 }
