@@ -8,13 +8,7 @@ function get_result_operationF(_num1, _func){
 		case 1: // sprite de x^x
 			_result = power(_num1, _num1);
 			break;
-		case 2: // sprite de x!
-			_result = fac(_num1);
-			break;
-		case 3: // sprite de raiz x-ésima de x
-			_result = power(_num1, 1/(_num1));
-			break;
-		case 4: // sprite do NOT
+		case 2: // sprite do NOT
 			_result = -(_num1 + 1);
 			break;
 	}
@@ -43,14 +37,17 @@ function get_result_operationN(_num1, _num2, _op){
 		case 5: // sprite da raiz
 			_result = (_num1)*sqrt(_num2);
 			break;
-		case 6: // sprite OR
+		case 6: // sprite media
+			_result = (_num1 + _num2)/2;
+			break;
+		case 7: // sprite OR
 			_result =  _num1 | _num2;
 			break;
-		case 7: // sprite AND
+		case 8: // sprite AND
 			_result = _num1 & _num2;
 			break;
 	}
-	_result = get_bounded_result(_result); // limita o resultado pra 999 ou -999
+	_result = get_bounded_result(_result); 
 	return int64(_result);
 }
 function is_expression_valid(_num1, _num2 = 0, _op, has_function = false){
@@ -62,10 +59,6 @@ function is_expression_valid(_num1, _num2 = 0, _op, has_function = false){
 	}
 	else{
 		if(_op == 1 && _num1 == 0) // 0^0
-			return false;
-		if(_op == 2 && _num1 < 0) // fatorial de numero negativo
-			return false;
-		if(_op == 3 && _num1 < 0 && _num1 % 2 == 0) // raiz n-ésima de numero negativo, n par
 			return false;
 	}
 	return true;
@@ -79,10 +72,10 @@ function fac(_x){
 }
 
 function get_bounded_result(_result){
-	if(_result > 999)
-		return 999;
-	else if(_result < -999)
-		return -999;
+	if(_result > 299)
+		return 299;
+	else if(_result < -199)
+		return -199;
 	else
 		return _result;
 }

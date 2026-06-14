@@ -1,4 +1,5 @@
 draw_self();
+var hover = position_meeting(mouse_x, mouse_y, self);
 if(hover && text_description != ""){
 	box_x_size = string_length(text_description)/2;
 	var box_y_size = 13;

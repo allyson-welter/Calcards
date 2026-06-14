@@ -31,19 +31,19 @@ function create_main_deck(){ // essa funcao cria o baralho principal (as cartas 
 	
 	for(i = 0; i < positives_unlocked; i++)  // cria as instancias dos numeros positivos
 	{
-		_card = create_card(spr_cardsNumbersPositive, i,,, "number"); // cria as instancias do deck de numeros positivos
+		var _card = create_card(spr_cardsNumbersPositive, i,,, "number"); // cria as instancias do deck de numeros positivos
 		ds_list_add(global.deckNumbers, _card);
 	}
 	for(i = 0; i < negatives_unlocked; i++){ // cria as instancias dos numeros negativos
-		_card = create_card(spr_cardsNumbersNegative, i,,,"number");
+		var _card = create_card(spr_cardsNumbersNegative, i,,,"number");
 		ds_list_add(global.deckNumbers, _card);
 	}
 	for(i = 0; i < operations_unlocked; i++){ // cria as instancias do deck de operacoes
-		_card = create_card(spr_cardsOperations, i, true,, "operation");
+		var _card = create_card(spr_cardsOperations, i, true,, "operation");
 		ds_list_add(global.deckOperationsN, _card);
 	}
 	for(i = 0; i < functions_unlocked; i++){
-		_card = create_card(spr_cardsFunctions, i,, true, "function");	
+		var _card = create_card(spr_cardsFunctions, i,, true, "function");	
 		ds_list_add(global.deckOperationsF, _card);
 	}
 	if(global.belettiMode){
@@ -58,9 +58,18 @@ function create_card(_sprite, _frame, is_op = false, is_function = false, type =
 		_card.normal_index = _card.image_index;
 		_card.is_op = is_op;
 		_card.is_function = is_function;
-		_card.number = i; 
+		_card.number = _frame; 
 		_card.type = type;
-		instance_deactivate_object(_card);
 		_card.text_description = get_card_description(_card);
+		instance_deactivate_object(_card);
 		return _card;
 }
+
+function create_binary_operators(){
+	var _card = create_card(spr_cardsFunctions, 2,, true, "function");	
+	ds_list_add(global.deckOperationsF, _card);
+	_card = create_card(spr_cardsOperations, 7 , true,, "operation");
+	ds_list_add(global.deckOperationsN, _card);
+	_card = create_card(spr_cardsOperations, 8 , true,, "operation");
+	ds_list_add(global.deckOperationsN, _card); 
+} 

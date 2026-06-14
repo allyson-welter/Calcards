@@ -1,4 +1,3 @@
-hover = position_meeting(mouse_x, mouse_y, self);
 if(!_selected){
 	if(position_meeting(mouse_x, mouse_y, self)){
 		image_xscale = scale + 0.01;

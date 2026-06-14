@@ -12,10 +12,11 @@ function get_card_number_or_operation(_card){
 function get_unlocked_operations(){
 	switch(global.choosedLevel){
 		case 1:
-			return 4; // soma, subtracao, multiplicacao e divisao
+			return 4;
 		case 2:
+			return 6;
 		case 3:
-			return 6; // anterior + raiz e exponenciacao
+			return 7; 
 	}
 }
 
@@ -39,7 +40,7 @@ function get_unlocked_functions(){
 		case 2:
 			return 0;
 		case 3:
-			return 4;
+			return 2;
 	}
 }
 
@@ -67,9 +68,11 @@ function get_card_description(_card){
 				return "Eleva a primeira carta pela segunda";
 			case 5: // sqrt
 				return "Multiplica a primeira carta pela raiz quadrada da segunda";
-			case 6: // or
+			case 6: // media
+				return "Faz a média aritmética da primeira carta com a segunda";
+			case 7: // or
 				return "Faz a operação binária OR entre a primeira carta e a segunda";
-			case 7: //and
+			case 8: //and
 				return "Faz a operação binária AND entre a primeira carta e a segunda";
 		}
 	}
@@ -79,11 +82,7 @@ function get_card_description(_card){
 				return "Inverte o sinal da primeira carta";
 			case 1: // x^x
 				return "Eleva a primeira carta a ela mesma";
-			case 2: // x!
-				return "Faz o fatorial da primeira carta";
-			case 3: // raiz x-ésima de x
-				return "Faz a raiz da primeira carta com ela mesma como índice";
-			case 4: // not
+			case 2: // not
 				return "Faz a operação binária NOT da primeira carta";
 		}
 	}

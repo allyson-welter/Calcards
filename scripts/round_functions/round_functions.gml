@@ -41,7 +41,7 @@ function number_of_cards_to_give_player(){ // funcao pra saber quais cartas dar 
 			cards_to_give = [5, 3, 0, 1, 2, 0, 2, 1, 0];
 			break;
 		case 3:
-			cards_to_give = [5, 2, 1, 0, 1, 1, 1, 0, 1];
+			cards_to_give = [5, 2, 1, 2, 2, 0, 0, 3, 1];
 			break;
 	}
 	return cards_to_give;
@@ -53,7 +53,6 @@ function clear_lists(deck){
 	ds_list_destroy(global.deckOperationsF);
 	instance_destroy(obj_card);
 	ds_list_destroy(deck);
-
 }
 
 function end_game(deck, number, _result){
@@ -101,7 +100,7 @@ function get_number_range(){
 		case 2:
 			return [-30, 100];
 		case 3:
-			return [-300, 999];
+			return [-100, 200];
 	}
 }
 

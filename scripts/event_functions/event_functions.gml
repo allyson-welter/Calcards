@@ -66,18 +66,24 @@ function event_changeOperationFunction(_card){
 		var op = 0;
 		if(_card.is_op)
 			op++;
-		else
+		else{
 			func++;
-							
+			if(ds_list_empty(global.deckOperationsF)){
+				func--;
+				op++;
+			}
+				
+		}
+		
 		give_player_cards(obj_game.deck, 0, op, func);
 		var ind = ds_list_find_index(obj_game.deck, _card); 
 		ds_list_delete(obj_game.deck, ind);
 		instance_deactivate_object(_card); 
 		draw_deck(obj_game.deck); 
 		obj_event.alarm[0] = 5;	
+		return;
 	}	
-	else
-		shine_card_red(_card);
+	shine_card_red(_card);
 }
 
 function event_changeNumber(_card){

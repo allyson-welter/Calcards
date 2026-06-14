@@ -38,15 +38,6 @@ function change_digit_base_to_hex(digit){
 	}
 }
 
-function create_binary_operators(){
-	var _card = create_card(spr_cardsFunctions, 4,, true);	
-	ds_list_add(global.deckOperationsF, _card);
-	_card = create_card(spr_cardsOperations, 6 , true);
-	ds_list_add(global.deckOperationsN, _card);
-	_card = create_card(spr_cardsOperations, 7 , true); // SIX SEVEN!!!!
-	ds_list_add(global.deckOperationsN, _card); 
-} 
-
 function decimal_to_binary(num){
 	var is_neg = false;
 	var _num = abs(num);
