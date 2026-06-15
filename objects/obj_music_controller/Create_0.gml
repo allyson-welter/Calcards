@@ -20,7 +20,7 @@ function refresh_music_sprite_position(){
 		case rm_game:
 			current_room = "rm_game";
 			obj_music_controller.x = 307;
-			if(instance_exists(obj_squareCheck))
+			if(global.belettiMode)
 				obj_music_controller.y = 45;
 			else
 				obj_music_controller.y = 25;

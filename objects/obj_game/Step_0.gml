@@ -12,6 +12,7 @@ if(_inst && !global.trava_carta){
 			draw_deck(deck)
 			refresh_confirm_button(_selectedCards);
 			update_translated_info();
+			show_debug_message(_inst.number);
 		}
 	}
 }

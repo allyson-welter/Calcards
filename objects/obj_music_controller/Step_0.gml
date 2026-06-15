@@ -9,6 +9,6 @@ if(hover && mouse_check_button_pressed(mb_left)){
 		audio_pause_sound(global.music);
 }
 
-if(room_get_name(rm_game) != current_room){
+if(room_get_name(room) != current_room){
 	refresh_music_sprite_position();	
 }
