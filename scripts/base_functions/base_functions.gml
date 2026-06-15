@@ -80,9 +80,9 @@ function update_translated_info(){
 	if(obj_game._round > 1)
 		num1 = card1;
 	else if(!is_undefined(card1))
-		num1 = get_card_number_or_operation(card1);
+		num1 = card1.number;
 	if(!is_undefined(card2))
-		num2 = get_card_number_or_operation(card2);
+		num2 = card2.number;
 		
 	
 	with(obj_translator){

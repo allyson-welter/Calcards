@@ -1,5 +1,5 @@
 function get_result_operationF(_num1, _func){
-	_result = 0;
+	var _result = 0;
 	
 	switch(_func){
 		case 0: // sprite de -x
@@ -16,7 +16,7 @@ function get_result_operationF(_num1, _func){
 	return int64(_result);
 }
 function get_result_operationN(_num1, _num2, _op){
-	_result = 0;
+	var _result = 0;
 
 	switch(_op){
 		case 0: // sprite da soma
@@ -65,7 +65,7 @@ function is_expression_valid(_num1, _num2 = 0, _op, has_function = false){
 }
 
 function fac(_x){
-	_res = 1;
+	var _res = 1;
 	for(i = 2; i <= _x; i++)
 		_res *= i;
 	return _res;

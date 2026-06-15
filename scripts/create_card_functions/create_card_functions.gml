@@ -1,75 +1,41 @@
-function give_player_cards(_deck, _num, _op, _func = 0){ // _num é a quantidade de cartas de numeros a serem dadas e _op a de operacoes a serem dadas
+function give_player_cards(num, op, func){
 	ds_list_shuffle(global.deckOperationsN);
 	ds_list_shuffle(global.deckNumbers);
 	ds_list_shuffle(global.deckOperationsF);
-
-	for(i = 0; i < _num; i++)
-	{
-		ds_list_insert(_deck, 0, global.deckNumbers[| 0]);
-		instance_activate_object(global.deckNumbers[| 0]);
-		ds_list_delete(global.deckNumbers, 0);
-		shine_card(_deck[| 0]);
-	}
-	for(i = 0; i < _op; i++){
-		ds_list_add(_deck, global.deckOperationsN[| 0]);
-		instance_activate_object(global.deckOperationsN[| 0]);
-		ds_list_delete(global.deckOperationsN, 0);
-		shine_card(_deck[| ds_list_size(_deck) - 1]);
-	}
-	for(i = 0; i < _func; i++){
-		ds_list_add(_deck, global.deckOperationsF[| 0]);
-		instance_activate_object(global.deckOperationsF[| 0]);
-		ds_list_delete(global.deckOperationsF, 0);
-		shine_card(_deck[| ds_list_size(_deck) - 1]);
-	}
-}
-function create_main_deck(){ // essa funcao cria o baralho principal (as cartas possiveis que o player pode ter)
-	operations_unlocked = get_unlocked_operations();
-	negatives_unlocked = get_unlocked_negative();
-	functions_unlocked = get_unlocked_functions();
-	positives_unlocked = get_unlocked_positive();
 	
-	for(i = 0; i < positives_unlocked; i++)  // cria as instancias dos numeros positivos
+	for(i = 0; i < num; i++)
 	{
-		var _card = create_card(spr_cardsNumbersPositive, i,,, "number"); // cria as instancias do deck de numeros positivos
-		ds_list_add(global.deckNumbers, _card);
+		var sprite = global.deckNumbers[| 0];
+		ds_list_delete(global.deckNumbers, 0);
+		var card = create_card(sprite, "number");
+		ds_list_insert(obj_game.deck, 0, card);
 	}
-	for(i = 0; i < negatives_unlocked; i++){ // cria as instancias dos numeros negativos
-		var _card = create_card(spr_cardsNumbersNegative, i,,,"number");
-		ds_list_add(global.deckNumbers, _card);
+	for(i = 0; i < op; i++){
+		var sprite = global.deckOperationsN[| 0];
+		ds_list_delete(global.deckOperationsN, 0);
+		var card = create_card(sprite, "operation");
+		ds_list_add(obj_game.deck, card);
 	}
-	for(i = 0; i < operations_unlocked; i++){ // cria as instancias do deck de operacoes
-		var _card = create_card(spr_cardsOperations, i, true,, "operation");
-		ds_list_add(global.deckOperationsN, _card);
-	}
-	for(i = 0; i < functions_unlocked; i++){
-		var _card = create_card(spr_cardsFunctions, i,, true, "function");	
-		ds_list_add(global.deckOperationsF, _card);
-	}
-	if(global.belettiMode){
-		create_binary_operators();
-	}
+	for(i = 0; i < func; i++){
+		var sprite = global.deckOperationsF[| 0];
+		ds_list_delete(global.deckOperationsF, 0);
+		var card = create_card(sprite, "function");
+		ds_list_add(obj_game.deck, card);
+	} 
 }
 
-function create_card(_sprite, _frame, is_op = false, is_function = false, type = ""){
-		_card = instance_create_layer(0, 0, "Instances", obj_card);
-		_card.sprite_index = _sprite;
-		_card.image_index = _frame;
-		_card.normal_index = _card.image_index;
-		_card.is_op = is_op;
-		_card.is_function = is_function;
-		_card.number = _frame; 
-		_card.type = type;
-		_card.text_description = get_card_description(_card);
-		instance_deactivate_object(_card);
-		return _card;
+function create_main_deck(){
+	add_unlocked_functions();
+	add_unlocked_negative();
+	add_unlocked_operations();
+	add_unlocked_positive();
 }
 
-function create_binary_operators(){
-	var _card = create_card(spr_cardsFunctions, 2,, true, "function");	
-	ds_list_add(global.deckOperationsF, _card);
-	_card = create_card(spr_cardsOperations, 7 , true,, "operation");
-	ds_list_add(global.deckOperationsN, _card);
-	_card = create_card(spr_cardsOperations, 8 , true,, "operation");
-	ds_list_add(global.deckOperationsN, _card); 
-} 
+function create_card(sprite, type){
+	var card = instance_create_layer(0, 0, "Instances", obj_card);
+	card.sprite_index = sprite;
+	card.type = type;
+	card.number = get_card_number(sprite, type);
+	card.text_description = get_card_description(type, card.number);
+	return card;
+}

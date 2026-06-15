@@ -21,7 +21,7 @@ var _btn = instance_position(mouse_x, mouse_y, obj_button);
 if(_btn){
 	if(mouse_check_button_pressed(mb_left)){
 		if(_btn.button_type == "confirm"){ 
-			_valid = confirm_button(_selectedCards, _round);
+			var _valid = confirm_button(_selectedCards, _round);
 			if(_valid){
 				update_round();
 			}

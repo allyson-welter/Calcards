@@ -14,22 +14,16 @@ function event_functions(){
 
 function event_plusOne(_card){
 	var is_card_valid = false;
-	var max_index = 9;
+	var max_number = 9;
 	if(global.belettiMode)
-		max_index = 15;
-	if(!_card.is_op && !_card.is_function){
-		if(spr_cardsNumbersPositive==_card.sprite_index && _card.image_index != max_index){
-			_card.image_index+=1;
-			is_card_valid = true;	
-		}
-		else if(spr_cardsNumbersNegative == _card.sprite_index){
-			if(_card.image_index==0)
-				_card.sprite_index = spr_cardsNumbersPositive;
-			else
-				_card.image_index-=1;
-			is_card_valid = true;
-		}
+		max_number = 15;
+		
+	if(_card.type == "number" && _card.number != max_number){
+		_card.number++;
+		_card.sprite_index = get_number_sprite(_card.number);
+		is_card_valid = true;
 	}
+	
 	if(is_card_valid)
 		obj_event.alarm[0] = 5;
 	else
@@ -38,21 +32,13 @@ function event_plusOne(_card){
 
 function event_minusOne(_card){
 	var is_card_valid = false;
-	var min_index = 8;
+	var min_number = -9;
 	if(global.belettiMode)
-		min_index = 14;
-	if(!_card.is_op && !_card.is_function){
-		if(spr_cardsNumbersPositive==_card.sprite_index){
-			if(_card.image_index == 0)
-				_card.sprite_index = spr_cardsNumbersNegative;
-			else
-				_card.image_index-=1;
-			is_card_valid = true;	
-		}
-		else if(spr_cardsNumbersNegative == _card.sprite_index && _card.image_index != min_index){
-			_card.image_index+=1;
-			is_card_valid = true;
-		}
+		min_number = -15;
+	if(_card.type == "number" && _card.number != min_number){
+		_card.number--;
+		_card.sprite_index = get_number_sprite(_card.number);
+		is_card_valid = true;
 	}
 	if(is_card_valid)
 		obj_event.alarm[0] = 5;
@@ -61,24 +47,23 @@ function event_minusOne(_card){
 }
 
 function event_changeOperationFunction(_card){
-	if(_card.is_op || _card.is_function){
+	if(_card.type == "operation" || _card.type == "function"){
 		var func = 0;
 		var op = 0;
-		if(_card.is_op)
+		if(_card.type == "operation")
 			op++;
 		else{
 			func++;
 			if(ds_list_empty(global.deckOperationsF)){
 				func--;
 				op++;
-			}
-				
+			}		
 		}
 		
-		give_player_cards(obj_game.deck, 0, op, func);
+		give_player_cards(0, op, func);
 		var ind = ds_list_find_index(obj_game.deck, _card); 
 		ds_list_delete(obj_game.deck, ind);
-		instance_deactivate_object(_card); 
+		return_card_to_game_deck(_card);
 		draw_deck(obj_game.deck); 
 		obj_event.alarm[0] = 5;	
 		return;
@@ -87,11 +72,11 @@ function event_changeOperationFunction(_card){
 }
 
 function event_changeNumber(_card){
-	if(!_card.is_op && !_card.is_function){
-		give_player_cards(obj_game.deck, 1, 0,0);
+	if(_card.type == "number"){
+		give_player_cards(1, 0, 0);
 		var ind = ds_list_find_index(obj_game.deck, _card); 
 		ds_list_delete(obj_game.deck, ind);
-		instance_deactivate_object(_card); 
+		return_card_to_game_deck(_card);
 		draw_deck(obj_game.deck); 
 		obj_event.alarm[0] = 5;
 	}

@@ -2,11 +2,11 @@ function new_round_cards(){
 	with(obj_game){
 		switch(_round){
 			case 2:
-			give_player_cards(deck, cardsToGiveEachRound[3], cardsToGiveEachRound[4], cardsToGiveEachRound[5]);
+			give_player_cards(cardsToGiveEachRound[3], cardsToGiveEachRound[4], cardsToGiveEachRound[5]);
 			draw_deck(deck);
 			break;
 		case 3:
-			give_player_cards(deck, cardsToGiveEachRound[6], cardsToGiveEachRound[7], cardsToGiveEachRound[8]);
+			give_player_cards(cardsToGiveEachRound[6], cardsToGiveEachRound[7], cardsToGiveEachRound[8]);
 			draw_deck(deck);
 			break;
 		case 4:
@@ -33,15 +33,16 @@ function update_round(){
 }
 
 function number_of_cards_to_give_player(){ // funcao pra saber quais cartas dar por rodada a depender do level
+	var cards_to_give = noone;
 	switch(global.choosedLevel){
 		case 1:
-			cards_to_give = [5, 2, 0, 1, 1, 0, 2, 1, 0];
+			cards_to_give = [4, 3, 0, 1, 1, 0, 2, 1, 0];
 			break;
 		case 2:
-			cards_to_give = [5, 3, 0, 1, 2, 0, 2, 1, 0];
+			cards_to_give = [4, 3, 0, 1, 2, 0, 2, 1, 0];
 			break;
 		case 3:
-			cards_to_give = [5, 2, 1, 2, 2, 0, 0, 3, 1];
+			cards_to_give = [3, 3, 1, 2, 1, 0, 2, 2, 0];
 			break;
 	}
 	return cards_to_give;
@@ -65,11 +66,11 @@ function end_game(deck, number, _result){
 }
 
 function get_stars(number, _result){
-	_diff = abs(number - _result);
-	_range = get_number_range();
-	_error = _diff/(_range[1] - _range[0])*100; // erro em % (sobre o total do intervalo)
+	var _diff = abs(number - _result);
+	var _range = get_number_range();
+	var _error = _diff/(_range[1] - _range[0])*100; // erro em % (sobre o total do intervalo)
 	if(_error > 15) // 0 estrelas (erro de >15%)
-		_stars = 0;
+		var _stars = 0;
 	else if(_diff > 7.5) // 1 estrela (erro de >7.5%)
 		_stars = 1;
 	else if(_diff > 0) // 2 estrelas (erro de >0%)

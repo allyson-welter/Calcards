@@ -1,7 +1,5 @@
 _selected = false; // variavel pra saber se a carta foi selecionada (se ela ta no meio)
-scale = 0.35;
-is_op = false; // variavel pra saber se a carta é uma operação ou não
-is_function = false; // variavel pra saber se a carta é uma função ou não
+scale = 0.175;
 number = 0;
 type = noone;
 text_description = "";
